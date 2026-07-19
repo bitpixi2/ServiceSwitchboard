@@ -93,6 +93,9 @@ test("llms.txt contains the complete README and contact details", async () => {
   assert.match(llms, /## Contact/);
   assert.match(llms, /Kasey\.Robinson@abs\.gov\.au/);
   assert.match(llms, /github\.com\/bitpixi2\/ServiceSwitchboard/);
+  assert.match(llms, /Codex Pro generative coding AI/);
+  assert.match(llms, /OpenAI API with GPT-5\.6 Sol for the bot calls/);
+  assert.doesNotMatch(llms, /Agency and careers links are a curated prototype snapshot/);
 });
 
 test("AI endpoint fails safely when the server key is absent", async () => {

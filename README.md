@@ -138,7 +138,7 @@ I would not release that capability without authentication, rate limits, logging
 > - **Risks:** Generative AI may miss a suitable path or use information that has changed. Users must check current official advice.
 > - **Tools used:** Codex Pro, OpenAI API, Next.js, Lucide icons and curated Australian Government sources.
 >
-> **Acknowledgement:** I acknowledge that this bot is my work. I used generative AI and coding assistance to build the prototype, as disclosed in the Bot Card, and I am responsible for this submission.
+> **Acknowledgement:** I acknowledge that this bot is my work. I used Codex Pro generative coding AI to build the prototype and the OpenAI API with GPT-5.6 Sol for the bot calls, as disclosed in the Bot Card. I am responsible for this submission.
 >
 > Kind regards,<br>
 > Kasey Robinson<br>
@@ -153,8 +153,6 @@ I would not release that capability without authentication, rate limits, logging
 - [Australian Government Organisations Register](https://www.directory.gov.au/reports/australian-government-organisations-register)
 - [APSC citizenship guidance](https://www.apsc.gov.au/working-aps/hr-practitioners/recruitment-aps/onboarding/citizenship-aps)
 - [AGSVA eligibility and suitability guidance](https://www.agsva.gov.au/applicants/eligibility-suitability)
-
-Agency and careers links are a curated prototype snapshot. Check current official information before acting on a result.
 
 ## Contact
 
