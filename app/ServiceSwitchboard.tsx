@@ -481,6 +481,14 @@ export default function ServiceSwitchboard() {
             </p>
           </section>
 
+          <div className="mapper-intro form-step-intro">
+            <img
+              className="section-sticker coffee-sticker"
+              src="/koala-coffee-chat-sticker.png"
+              alt="Two koala colleagues discussing career options over coffee"
+            />
+          </div>
+
           <section
             className="form-block story-block"
             aria-labelledby="background-heading"
@@ -488,36 +496,35 @@ export default function ServiceSwitchboard() {
             <h2 className="form-step-heading" id="background-heading">
               <span>2</span> Your background and desired next role?
             </h2>
-            <div className="form-illustration-layout story-layout">
-              <div>
-                <label htmlFor="your-story">
-                  A few sentences is enough
-                  <textarea
-                    id="your-story"
-                    value={form.story}
-                    maxLength={1600}
-                    onChange={(event) =>
-                      setForm((current) => ({ ...current, story: event.target.value }))
-                    }
-                    placeholder="For example: I coordinate a national field project, build small web tools, explain complex information and enjoy working with communities…"
-                  />
-                </label>
-                <div className="story-foot">
-                  <span className="character-count">{form.story.length}/1600</span>
-                  <span className="privacy-note">
-                    This site does not store your data, but it is sent briefly to an AI
-                    service in the cloud to create your results. Please do not enter
-                    protected, classified or very personal information.
-                  </span>
-                </div>
-              </div>
-              <img
-                className="form-sticker colleague-sticker"
-                src="/koala-coffee-chat-sticker.png"
-                alt="Two koala colleagues discussing career options over coffee"
+            <label htmlFor="your-story">
+              A few sentences is enough
+              <textarea
+                id="your-story"
+                value={form.story}
+                maxLength={1600}
+                onChange={(event) =>
+                  setForm((current) => ({ ...current, story: event.target.value }))
+                }
+                placeholder="For example: I coordinate a national field project, build small web tools, explain complex information and enjoy working with communities…"
               />
+            </label>
+            <div className="story-foot">
+              <span className="character-count">{form.story.length}/1600</span>
+              <span className="privacy-note">
+                This site does not store your data, but it is sent briefly to an AI
+                service in the cloud to create your results. Please do not enter
+                protected, classified or very personal information.
+              </span>
             </div>
           </section>
+
+          <div className="mapper-intro form-step-intro">
+            <img
+              className="section-sticker ute-sticker"
+              src="/koala-high-vis-ute-sticker.png"
+              alt="Ollie the Koala with his paws in his high-vis vest pockets beside a utility ute"
+            />
+          </div>
 
           <section
             className="form-block details-block"
@@ -526,94 +533,83 @@ export default function ServiceSwitchboard() {
             <h2 className="form-step-heading" id="practical-details-heading">
               <span>3</span> Add practical details
             </h2>
-            <div className="form-illustration-layout details-layout">
-              <div>
-                <div className="details-grid">
-                  <label>
-                    Location
-                    <select
-                      value={form.location}
-                      onChange={(event) =>
-                        setForm((current) => ({ ...current, location: event.target.value }))
-                      }
-                    >
-                      <option>Australia-wide</option>
-                      <option>Australian Capital Territory</option>
-                      <option>New South Wales</option>
-                      <option>Northern Territory</option>
-                      <option>Queensland</option>
-                      <option>South Australia</option>
-                      <option>Tasmania</option>
-                      <option>Victoria</option>
-                      <option>Western Australia</option>
-                    </select>
-                  </label>
-                  <label>
-                    Preferred setting
-                    <select
-                      value={form.workSetting}
-                      onChange={(event) =>
-                        setForm((current) => ({
-                          ...current,
-                          workSetting: event.target.value as FormState["workSetting"],
-                        }))
-                      }
-                    >
-                      <option value="any">Open to any setting</option>
-                      <option value="office">Mostly on site</option>
-                      <option value="hybrid">Hybrid</option>
-                      <option value="remote">Remote where available</option>
-                      <option value="field">Field or operational</option>
-                    </select>
-                  </label>
-                  <label>
-                    Current work arrangement
-                    <select
-                      value={form.employmentStatus}
-                      onChange={(event) =>
-                        setForm((current) => ({
-                          ...current,
-                          employmentStatus: event.target
-                            .value as FormState["employmentStatus"],
-                        }))
-                      }
-                    >
-                      <option value="ongoing_aps">Ongoing APS employee</option>
-                      <option value="non_ongoing_aps">Non-ongoing APS employee</option>
-                      <option value="contractor">Contractor or labour hire</option>
-                      <option value="outside_government">Not currently in government</option>
-                      <option value="not_sure">Not sure</option>
-                    </select>
-                  </label>
-                  <label>
-                    Citizenship status
-                    <select
-                      value={form.citizenshipStatus}
-                      onChange={(event) =>
-                        setForm((current) => ({
-                          ...current,
-                          citizenshipStatus: event.target
-                            .value as FormState["citizenshipStatus"],
-                        }))
-                      }
-                    >
-                      <option value="citizen">Australian citizen</option>
-                      <option value="permanent_resident">Australian permanent resident</option>
-                      <option value="other_work_rights">Other Australian work rights</option>
-                      <option value="prefer_not_to_say">Prefer not to say</option>
-                    </select>
-                  </label>
-                </div>
-                <p className="detail-note">
-                  This helps the bot identify questions to ask. It does not determine eligibility.
-                </p>
-              </div>
-              <img
-                className="form-sticker high-vis-sticker"
-                src="/koala-high-vis-ute-sticker.png"
-                alt="Ollie the Koala with his paws in his high-vis vest pockets beside a utility ute"
-              />
+            <div className="details-grid">
+              <label>
+                Location
+                <select
+                  value={form.location}
+                  onChange={(event) =>
+                    setForm((current) => ({ ...current, location: event.target.value }))
+                  }
+                >
+                  <option>Australia-wide</option>
+                  <option>Australian Capital Territory</option>
+                  <option>New South Wales</option>
+                  <option>Northern Territory</option>
+                  <option>Queensland</option>
+                  <option>South Australia</option>
+                  <option>Tasmania</option>
+                  <option>Victoria</option>
+                  <option>Western Australia</option>
+                </select>
+              </label>
+              <label>
+                Preferred setting
+                <select
+                  value={form.workSetting}
+                  onChange={(event) =>
+                    setForm((current) => ({
+                      ...current,
+                      workSetting: event.target.value as FormState["workSetting"],
+                    }))
+                  }
+                >
+                  <option value="any">Open to any setting</option>
+                  <option value="office">Mostly on site</option>
+                  <option value="hybrid">Hybrid</option>
+                  <option value="remote">Remote where available</option>
+                  <option value="field">Field or operational</option>
+                </select>
+              </label>
+              <label>
+                Current work arrangement
+                <select
+                  value={form.employmentStatus}
+                  onChange={(event) =>
+                    setForm((current) => ({
+                      ...current,
+                      employmentStatus: event.target.value as FormState["employmentStatus"],
+                    }))
+                  }
+                >
+                  <option value="ongoing_aps">Ongoing APS employee</option>
+                  <option value="non_ongoing_aps">Non-ongoing APS employee</option>
+                  <option value="contractor">Contractor or labour hire</option>
+                  <option value="outside_government">Not currently in government</option>
+                  <option value="not_sure">Not sure</option>
+                </select>
+              </label>
+              <label>
+                Citizenship status
+                <select
+                  value={form.citizenshipStatus}
+                  onChange={(event) =>
+                    setForm((current) => ({
+                      ...current,
+                      citizenshipStatus: event.target.value as FormState["citizenshipStatus"],
+                    }))
+                  }
+                >
+                  <option value="citizen">Australian citizen</option>
+                  <option value="permanent_resident">Australian permanent resident</option>
+                  <option value="other_work_rights">Other Australian work rights</option>
+                  <option value="prefer_not_to_say">Prefer not to say</option>
+                </select>
+              </label>
             </div>
+            <p className="detail-note">
+              This helps the bot identify questions to ask. It does not determine eligibility.
+            </p>
           </section>
 
           {error && (

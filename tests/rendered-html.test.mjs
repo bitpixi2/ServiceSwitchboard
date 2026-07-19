@@ -99,6 +99,16 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.match(html, /koala-coffee-chat-sticker\.png/);
   assert.doesNotMatch(html, /koala-colleague-sticker\.png/);
   assert.match(html, /koala-high-vis-ute-sticker\.png/);
+  assert.ok(
+    html.indexOf("koala-coffee-chat-sticker.png") < html.indexOf('id="background-heading"'),
+    "coffee sticker should appear above section 2",
+  );
+  assert.ok(
+    html.indexOf("koala-high-vis-ute-sticker.png") <
+      html.indexOf('id="practical-details-heading"'),
+    "ute sticker should appear above section 3",
+  );
+  assert.doesNotMatch(html, /class="form-sticker/);
   assert.doesNotMatch(html, /An independent Innovation Month prototype/);
   assert.doesNotMatch(
     html,
