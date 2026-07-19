@@ -6,7 +6,7 @@
 
 **A mobile-first career guide for finding where your skills could fit across the Australian Public Service.**
 
-[Try the live bot](https://serviceswitchboard.bitpixi.com) · [Go to the Bot Card](https://serviceswitchboard.bitpixi.com/#bot-card)
+[Try the live bot](https://switchboard.bitpixi.com) · [Go to the Bot Card](https://switchboard.bitpixi.com/#bot-card)
 
 IM2026 Service Switchboard helps current, non-ongoing and prospective public servants describe the work they can do—not just the job title they have now. Generative AI turns that information into role families, public missions, organisations to explore and practical next steps.
 
@@ -57,7 +57,7 @@ The response is returned as structured data so the interface can present a consi
 
 ## A quick judge walkthrough
 
-1. Open the [live bot](https://serviceswitchboard.bitpixi.com) on a phone or desktop.
+1. Open the [live bot](https://switchboard.bitpixi.com) on a phone or desktop.
 2. Choose up to eight work areas that describe what you enjoy or can do.
 3. Add a short example of your experience and any practical needs.
 4. Build the switchboard to see skills that can travel, role families, public missions and possible paths.
@@ -118,7 +118,7 @@ I would not release that capability without authentication, rate limits, logging
 >
 > **Bot name:** IM2026 Service Switchboard<br>
 > **Category:** The Complexity Tamer<br>
-> **Bot link:** https://serviceswitchboard.bitpixi.com
+> **Bot link:** https://switchboard.bitpixi.com
 >
 > **Short description:** IM2026 Service Switchboard is a mobile-first generative AI career guide. It helps current, non-ongoing and prospective public servants turn their skills and interests into APS role families, organisations to explore, useful search terms and practical next steps. It makes a large and unfamiliar system easier to navigate while clearly separating suggestions from decisions that must be confirmed with an agency.
 >
