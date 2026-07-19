@@ -258,11 +258,10 @@ export default function ServiceSwitchboard() {
       <section className="hero" id="top">
         <div className="hero-copy">
           <p className="kicker">Your skills can travel</p>
-          <h1>See where you could serve Australia next.</h1>
+          <h1>Find your next public service role.</h1>
           <p className="hero-lede">
-            Describe what you are good at and what matters to you. Get a clear,
-            cautious map of role families and Commonwealth organisations worth
-            exploring.
+            Match your skills to Australian Government roles and organisations
+            worth exploring.
           </p>
           <div className="hero-actions">
             <a className="button primary" href="#mapper">
@@ -274,7 +273,10 @@ export default function ServiceSwitchboard() {
           </div>
         </div>
 
-        <div className="switchboard-preview" aria-label="Example career map">
+        <div
+          className="switchboard-preview"
+          aria-label="Meet Ollie, the Service Switchboard bot"
+        >
           <div className="preview-guide">
             <span className="preview-guide-image">
               <img
@@ -283,7 +285,6 @@ export default function ServiceSwitchboard() {
               />
             </span>
             <span className="preview-guide-copy">
-              <small>Your guide</small>
               <strong>G’day! I’m Ollie, your Service Switchboard bot.</strong>
             </span>
           </div>
@@ -296,9 +297,6 @@ export default function ServiceSwitchboard() {
 
       <section className="mapper-section" id="mapper">
         <div className="mapper-intro">
-          <div className="section-heading">
-            <h2>Your switchboard to your next Australian Government job.</h2>
-          </div>
           <img
             className="section-sticker suitcase-sticker"
             src="/koala-suitcase-sticker.png"
@@ -761,11 +759,11 @@ export default function ServiceSwitchboard() {
           <p className="footer-inspiration">
             Ollie was inspired by the koala featured in{" "}
             <a
-              href="https://www.abs.gov.au/about/our-organisation/our-commitments/certification-statement-2026-census-campaign"
+              href="https://www.abs.gov.au/census/census-media-hub/census-tools-and-resources/video"
               target="_blank"
               rel="noreferrer"
             >
-              ABS Census advertising
+              the 2026 Census advertisements
             </a>
             .
           </p>

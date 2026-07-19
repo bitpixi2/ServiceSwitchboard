@@ -298,8 +298,6 @@ main {
   background: var(--white);
   border-radius: 18px;
   color: var(--ink);
-  display: grid;
-  gap: 7px;
   padding: 18px 20px;
   position: relative;
 }
@@ -314,16 +312,8 @@ main {
   top: 28px;
 }
 
-.preview-guide-copy small {
-  color: var(--teal-deep);
-  font-size: 16px;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  line-height: 1.2;
-  text-transform: uppercase;
-}
-
 .preview-guide-copy strong {
+  display: block;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 20px;
   font-weight: 500;
@@ -359,15 +349,13 @@ main {
 
 .mapper-intro {
   align-items: center;
-  display: grid;
-  gap: 30px;
-  grid-template-columns: minmax(0, 1fr) 260px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .section-sticker {
   display: block;
   height: auto;
-  justify-self: end;
   width: 250px;
 }
 
@@ -398,7 +386,7 @@ main {
 .mapper-form {
   display: grid;
   gap: 22px;
-  margin-top: 58px;
+  margin-top: 24px;
 }
 
 .form-block {
@@ -1436,10 +1424,6 @@ footer span {
     grid-template-columns: 1fr;
   }
 
-  .mapper-intro {
-    grid-template-columns: minmax(0, 1fr) 210px;
-  }
-
   .section-sticker {
     width: 210px;
   }
@@ -1485,8 +1469,9 @@ footer span {
   }
 
   .hero {
+    gap: 24px;
     min-height: auto;
-    padding: 48px 16px 66px;
+    padding: 22px 16px 54px;
   }
 
   .hero::before {
@@ -1494,19 +1479,27 @@ footer span {
   }
 
   .hero h1 {
-    font-size: clamp(54px, 17.5vw, 74px);
-    line-height: 0.9;
+    font-size: clamp(48px, 14vw, 62px);
+    letter-spacing: -0.055em;
+    line-height: 0.94;
+  }
+
+  .kicker {
+    font-size: 13px;
+    margin-bottom: 12px;
   }
 
   .hero-lede {
     font-size: 16px;
-    line-height: 1.55;
-    margin-top: 26px;
+    line-height: 1.5;
+    margin-top: 20px;
   }
 
   .hero-actions {
     align-items: stretch;
     flex-direction: column;
+    gap: 10px;
+    margin-top: 24px;
   }
 
   .button {
@@ -1518,21 +1511,39 @@ footer span {
   }
 
   .switchboard-preview {
-    min-height: 240px;
-    padding: 24px 20px;
+    background: transparent;
+    box-shadow: none;
+    justify-self: stretch;
+    min-height: auto;
+    order: -1;
+    overflow: visible;
+    padding: 0;
+    width: 100%;
+  }
+
+  .switchboard-preview::before,
+  .switchboard-preview::after {
+    display: none;
   }
 
   .preview-guide {
     gap: 12px;
+    justify-content: flex-start;
+    max-width: none;
+    width: 100%;
   }
 
   .preview-guide-image {
-    flex-basis: 110px;
-    height: 110px;
+    flex-basis: 88px;
+    height: 88px;
+  }
+
+  .preview-guide-copy {
+    padding: 12px 14px;
   }
 
   .preview-guide-copy strong {
-    font-size: 17px;
+    font-size: 16px;
   }
 
   .trust-strip {
@@ -1551,16 +1562,18 @@ footer span {
     padding-right: 16px;
   }
 
-  .mapper-intro,
   .form-illustration-layout,
   .details-layout {
     grid-template-columns: 1fr;
   }
 
+  .mapper-intro {
+    justify-content: center;
+  }
+
   .section-sticker {
-    justify-self: center;
-    margin-top: -20px;
-    width: min(240px, 68vw);
+    margin-top: 0;
+    width: min(170px, 48vw);
   }
 
   .form-sticker {
@@ -1592,7 +1605,7 @@ footer span {
   }
 
   .mapper-form {
-    margin-top: 40px;
+    margin-top: 12px;
   }
 
   .form-block {

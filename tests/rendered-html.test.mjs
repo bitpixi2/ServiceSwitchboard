@@ -29,18 +29,23 @@ test("server-renders the Service Switchboard MVP", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>IM2026 Service Switchboard<\/title>/i);
-  assert.match(html, /See where you could serve Australia next\./);
+  assert.match(html, /Find your next public service role\./);
+  assert.match(
+    html,
+    /Match your skills to Australian Government roles and organisations worth exploring\./,
+  );
+  assert.doesNotMatch(html, /See where you could serve Australia next\./);
   assert.match(html, /What work interests you\?/);
   assert.match(html, /Your background and desired next role\?/);
   assert.doesNotMatch(html, /What have you done—and what do you want more of\?/);
   assert.match(html, /Trades, facilities and logistics/);
   assert.doesNotMatch(html, /Show all 20 career areas|Show fewer areas/);
-  assert.match(html, /Your switchboard to your next Australian Government job\./);
+  assert.doesNotMatch(html, /Your switchboard to your next Australian Government job\./);
   assert.match(html, /Build my career map/);
   assert.match(html, /Go to Bot Card/);
   assert.match(html, /Bot card/);
   assert.match(html, /G’day! I’m Ollie/);
-  assert.match(html, /Your guide/);
+  assert.doesNotMatch(html, /Your guide/);
   assert.match(html, /Ollie the Koala operating the Service Switchboard/);
   assert.match(html, /Acknowledgement of Country/);
   assert.match(html, /linkedin\.com\/in\/bitpixi/);
@@ -63,7 +68,9 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.match(html, /No account required\./);
   assert.match(html, /Ollie was inspired by the koala featured in/);
   assert.doesNotMatch(html, /I chose him because I would like to join a technology team/);
-  assert.match(html, /certification-statement-2026-census-campaign/);
+  assert.match(html, /census-media-hub\/census-tools-and-resources\/video/);
+  assert.match(html, /the 2026 Census advertisements/);
+  assert.doesNotMatch(html, /certification-statement-2026-census-campaign/);
   assert.doesNotMatch(html, /One profile\. More than one possible path\./);
   assert.doesNotMatch(html, /Official structure in\. Cautious suggestions out\./);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/);
