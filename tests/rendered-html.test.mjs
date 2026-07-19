@@ -53,6 +53,10 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.doesNotMatch(html, /Your guide/);
   assert.match(html, /Ollie the Koala operating the Service Switchboard/);
   assert.match(html, /Acknowledgement of Country/);
+  assert.ok(
+    html.indexOf('class="footer-contact"') < html.indexOf('class="acknowledgement"'),
+    "contact details should appear before the Acknowledgement of Country",
+  );
   assert.match(html, /linkedin\.com\/in\/bitpixi/);
   assert.match(html, /github\.com\/bitpixi2\/ServiceSwitchboard/);
   assert.match(
@@ -67,7 +71,12 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.match(html, /koala-coffee-chat-sticker\.png/);
   assert.doesNotMatch(html, /koala-colleague-sticker\.png/);
   assert.match(html, /koala-high-vis-ute-sticker\.png/);
-  assert.match(html, /Not an official recruitment/);
+  assert.doesNotMatch(html, /An independent Innovation Month prototype/);
+  assert.doesNotMatch(
+    html,
+    /Not an official recruitment, migration or security-clearance service\./,
+  );
+  assert.doesNotMatch(html, /organisations in the prototype catalogue/);
   assert.match(
     html,
     /Codex Pro, OpenAI API, Next\.js, Lucide icons and curated Australian Government sources\./,

@@ -1312,8 +1312,7 @@ footer {
   border-top: 1px solid var(--line);
   display: grid;
   font-size: 10px;
-  gap: 30px 48px;
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr) minmax(180px, 0.7fr);
+  grid-template-columns: 1fr;
   margin: 0 auto;
   max-width: 1220px;
   padding: 38px 24px 52px;
@@ -1329,20 +1328,16 @@ footer span {
   color: var(--muted);
 }
 
-.footer-project,
 .acknowledgement,
 .footer-contact {
   align-content: start;
   display: grid;
 }
 
-.footer-project {
-  gap: 8px;
-}
-
 .acknowledgement {
-  border-left: 3px solid var(--coral);
-  padding-left: 20px;
+  border-top: 3px solid var(--coral);
+  margin-top: 30px;
+  padding-top: 28px;
 }
 
 .footer-contact nav {
@@ -1698,9 +1693,6 @@ footer span {
   }
 
   .acknowledgement {
-    border-left: 0;
-    border-top: 3px solid var(--coral);
-    padding-left: 0;
     padding-top: 20px;
   }
 }

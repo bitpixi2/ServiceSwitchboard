@@ -706,25 +706,6 @@ export default function ServiceSwitchboard() {
       </section>
 
       <footer>
-        <div className="footer-project">
-          <strong>IM2026 Service Switchboard</strong>
-          <p>
-            An independent Innovation Month prototype. Not an official recruitment,
-            migration or security-clearance service.
-          </p>
-          <span>{agencies.length} organisations in the prototype catalogue</span>
-        </div>
-
-        <div className="acknowledgement">
-          <strong>Acknowledgement of Country</strong>
-          <p>
-            We acknowledge the Traditional Owners and Custodians of Country
-            throughout Australia and recognise their continuing connection to
-            land, waters and communities. We pay our respects to Aboriginal and
-            Torres Strait Islander peoples, and to Elders past and present.
-          </p>
-        </div>
-
         <div className="footer-contact">
           <strong>Kasey Robinson</strong>
           <nav aria-label="Kasey Robinson contact links">
@@ -753,6 +734,16 @@ export default function ServiceSwitchboard() {
             <span>US Citizen. Full Australian working rights.</span>
             <a href="mailto:Kasey.Robinson@abs.gov.au">Kasey.Robinson@abs.gov.au</a>
           </div>
+        </div>
+
+        <div className="acknowledgement">
+          <strong>Acknowledgement of Country</strong>
+          <p>
+            We acknowledge the Traditional Owners and Custodians of Country
+            throughout Australia and recognise their continuing connection to
+            land, waters and communities. We pay our respects to Aboriginal and
+            Torres Strait Islander peoples, and to Elders past and present.
+          </p>
         </div>
       </footer>
     </main>
