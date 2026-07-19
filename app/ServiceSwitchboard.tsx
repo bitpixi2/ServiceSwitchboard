@@ -387,17 +387,16 @@ export default function ServiceSwitchboard() {
       )}
 
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="IM2026 Service Switchboard home">
+        <div className="brand" aria-label="IM2026 Service Switchboard">
           <span className="brand-signal" aria-hidden="true">
             <i />
             <i />
             <i />
           </span>
-          <span>
-            <strong>Service Switchboard</strong>
-            <small>IM2026 · working prototype</small>
-          </span>
-        </a>
+          <p className="brand-title">
+            <span>IM2026 ·</span> <strong>Service Switchboard</strong>
+          </p>
+        </div>
       </header>
 
       <section className="hero" id="top">

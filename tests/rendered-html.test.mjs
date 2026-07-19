@@ -63,6 +63,9 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.doesNotMatch(html, /[↘↗→]/);
   assert.doesNotMatch(html, /Go to Bot Card/);
   assert.match(html, /brand-signal/);
+  assert.match(html, /<span>IM2026 ·<\/span> <strong>Service Switchboard<\/strong>/);
+  assert.doesNotMatch(html, /href="#top"/);
+  assert.doesNotMatch(html, /WORKING PROTOTYPE|working prototype/);
   assert.doesNotMatch(html, /service-switchboard-logo\.png/);
   assert.match(html, /service-switchboard-bot-card\.png/);
   assert.match(html, /IM2026 Service Switchboard Bot Card\. Purpose:/);

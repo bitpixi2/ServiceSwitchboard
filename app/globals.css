@@ -76,25 +76,19 @@ main {
   align-items: center;
   display: inline-flex;
   gap: 12px;
-  text-decoration: none;
 }
 
-.brand > span:last-child {
-  display: grid;
-  gap: 2px;
-}
-
-.brand strong {
-  font-size: 15px;
+.brand-title {
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 800;
   letter-spacing: -0.02em;
+  margin: 0;
 }
 
-.brand small {
-  color: var(--muted);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.brand-title strong {
+  color: var(--teal);
+  font-weight: 800;
 }
 
 .brand-signal {
@@ -1613,8 +1607,8 @@ footer span {
     padding: 16px;
   }
 
-  .brand strong {
-    font-size: 13px;
+  .brand-title {
+    font-size: 16px;
   }
 
   .hero {
@@ -1917,7 +1911,6 @@ footer span {
 }
 
 /* Keep supporting text readable on small screens and at normal browser zoom. */
-.brand small,
 .kicker,
 .form-step-heading > span,
 .category-mark,
@@ -1934,7 +1927,6 @@ footer span {
   font-size: 0.875rem;
 }
 
-.brand strong,
 .category-card small,
 .selection-count,
 .story-block label,
