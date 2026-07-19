@@ -40,6 +40,7 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.match(html, /Go to Bot Card/);
   assert.match(html, /Bot card/);
   assert.match(html, /G’day! I’m Ollie/);
+  assert.match(html, /Your guide/);
   assert.match(html, /Ollie the Koala operating the Service Switchboard/);
   assert.match(html, /Acknowledgement of Country/);
   assert.match(html, /linkedin\.com\/in\/bitpixi/);
@@ -53,6 +54,8 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.doesNotMatch(html, /koala-colleague-sticker\.png/);
   assert.match(html, /koala-high-vis-ute-sticker\.png/);
   assert.match(html, /Not an official recruitment/);
+  assert.match(html, /Codex Pro, OpenAI API, Next\.js, Lucide icons/);
+  assert.doesNotMatch(html, /Skills that can travel/);
   assert.match(html, /No account required\./);
   assert.match(html, /Ollie was inspired by the koala featured in/);
   assert.match(html, /certification-statement-2026-census-campaign/);

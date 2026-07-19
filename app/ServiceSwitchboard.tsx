@@ -287,10 +287,6 @@ export default function ServiceSwitchboard() {
               <strong>G’day! I’m Ollie, your Service Switchboard bot.</strong>
             </span>
           </div>
-          <div className="preview-source">
-            <span>Your experience</span>
-            <strong>Skills that can travel</strong>
-          </div>
         </div>
       </section>
 
@@ -713,7 +709,7 @@ export default function ServiceSwitchboard() {
           </div>
           <div>
             <dt>Tools used</dt>
-            <dd>OpenAI generative AI, curated Australian Government sources and a mobile web interface.</dd>
+            <dd>Codex Pro, OpenAI API, Next.js, Lucide icons, curated Australian Government sources and Sites hosting.</dd>
           </div>
         </dl>
       </section>
