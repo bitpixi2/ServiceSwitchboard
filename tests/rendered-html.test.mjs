@@ -30,7 +30,9 @@ test("server-renders the Service Switchboard MVP", async () => {
   const html = await response.text();
   assert.match(html, /<title>IM2026 Service Switchboard<\/title>/i);
   assert.match(html, /See where you could serve Australia next\./);
-  assert.match(html, /Show all 20 career areas/);
+  assert.match(html, /What work interests you\?/);
+  assert.match(html, /Trades, facilities and logistics/);
+  assert.doesNotMatch(html, /Show all 20 career areas|Show fewer areas/);
   assert.match(html, /Your switchboard to your next Australian Government job\./);
   assert.match(html, /Build my career map/);
   assert.match(html, /Go to Bot Card/);
@@ -45,9 +47,13 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.match(html, /US Citizen\. Full Australian working rights\./);
   assert.match(html, /Kasey\.Robinson@abs\.gov\.au/);
   assert.match(html, /koala-suitcase-sticker\.png/);
-  assert.match(html, /koala-colleague-sticker\.png/);
+  assert.match(html, /koala-coffee-chat-sticker\.png/);
+  assert.doesNotMatch(html, /koala-colleague-sticker\.png/);
   assert.match(html, /koala-high-vis-ute-sticker\.png/);
   assert.match(html, /Not an official recruitment/);
+  assert.match(html, /No account required\./);
+  assert.match(html, /Ollie was inspired by the koala featured in/);
+  assert.match(html, /certification-statement-2026-census-campaign/);
   assert.doesNotMatch(html, /One profile\. More than one possible path\./);
   assert.doesNotMatch(html, /Official structure in\. Cautious suggestions out\./);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/);

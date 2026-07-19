@@ -3,7 +3,6 @@ export type CareerCategory = {
   label: string;
   shortLabel: string;
   description: string;
-  mark: string;
 };
 
 export type Agency = {
@@ -23,140 +22,120 @@ export const careerCategories: CareerCategory[] = [
     label: "Administration and business support",
     shortLabel: "Administration",
     description: "Coordination, governance, records and executive support",
-    mark: "AB",
   },
   {
     id: "finance",
     label: "Accounting and finance",
     shortLabel: "Finance",
     description: "Budgets, reporting, grants, audit and assurance",
-    mark: "AF",
   },
   {
     id: "economics",
     label: "Economics and forecasting",
     shortLabel: "Economics",
     description: "Modelling, markets, taxation and cost-benefit analysis",
-    mark: "EC",
   },
   {
     id: "data",
     label: "Data, statistics and research",
     shortLabel: "Data and research",
     description: "Analysis, surveys, evaluation and visualisation",
-    mark: "DR",
   },
   {
     id: "technology",
     label: "Software, technology and AI",
     shortLabel: "Technology and AI",
     description: "Coding, cloud, automation, product and responsible AI",
-    mark: "AI",
   },
   {
     id: "cyber",
     label: "Cybersecurity",
     shortLabel: "Cybersecurity",
     description: "Security operations, risk, response and awareness",
-    mark: "CY",
   },
   {
     id: "design",
     label: "Design and digital services",
     shortLabel: "Design",
     description: "Service design, UX, accessibility and user research",
-    mark: "DS",
   },
   {
     id: "policy",
     label: "Policy and strategic advice",
     shortLabel: "Policy",
     description: "Policy development, briefing and strategic planning",
-    mark: "PS",
   },
   {
     id: "projects",
     label: "Programs and project delivery",
     shortLabel: "Programs and projects",
     description: "Delivery, change, assurance and benefits management",
-    mark: "PP",
   },
   {
     id: "regulation",
     label: "Compliance, regulation and investigation",
     shortLabel: "Regulation",
     description: "Assessment, inspection, enforcement and fraud prevention",
-    mark: "CR",
   },
   {
     id: "service",
     label: "Service delivery and public contact",
     shortLabel: "Service delivery",
     description: "Claims, case management, client and community support",
-    mark: "SD",
   },
   {
     id: "communications",
     label: "Communications and community engagement",
     shortLabel: "Communications",
     description: "Public information, media, consultation and engagement",
-    mark: "CE",
   },
   {
     id: "field",
     label: "Field and operational work",
     shortLabel: "Field work",
     description: "Elections, environment, emergencies and regional operations",
-    mark: "FO",
   },
   {
     id: "science",
     label: "Science, environment and technical work",
     shortLabel: "Science",
     description: "Climate, agriculture, geology, engineering and spatial work",
-    mark: "ST",
   },
   {
     id: "health",
     label: "Health and social policy",
     shortLabel: "Health and social",
     description: "Public health, disability, aged care and social research",
-    mark: "HS",
   },
   {
     id: "legal",
     label: "Legal and parliamentary work",
     shortLabel: "Legal",
     description: "Legal services, legislation, tribunals and FOI",
-    mark: "LP",
   },
   {
     id: "people",
     label: "People and organisational development",
     shortLabel: "People and HR",
     description: "Recruitment, learning, workplace relations and culture",
-    mark: "HR",
   },
   {
     id: "information",
     label: "Intelligence and information management",
     shortLabel: "Information",
     description: "Analysis, archives, records and knowledge management",
-    mark: "IM",
   },
   {
     id: "procurement",
     label: "Procurement and contract management",
     shortLabel: "Procurement",
     description: "Tendering, commercial advice and vendor management",
-    mark: "PC",
   },
   {
     id: "trades",
     label: "Trades, facilities and logistics",
     shortLabel: "Trades and logistics",
     description: "Property, fleet, warehousing and technical maintenance",
-    mark: "TL",
   },
 ];
 

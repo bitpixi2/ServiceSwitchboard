@@ -3,6 +3,29 @@
 import { FormEvent, useMemo, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 import {
+  BadgeDollarSign,
+  BriefcaseBusiness,
+  ClipboardCheck,
+  Cpu,
+  Database,
+  FlaskConical,
+  FolderSearch,
+  Gavel,
+  Headset,
+  HeartPulse,
+  Landmark,
+  MapPinned,
+  MessageSquareText,
+  Palette,
+  Scale,
+  ShieldCheck,
+  ShoppingCart,
+  TrendingUp,
+  UsersRound,
+  Wrench,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import {
   agencies,
   agencyById,
   careerCategories,
@@ -78,23 +101,41 @@ const pathwayMeta: Record<
   },
 };
 
+const categoryIcons: Record<string, LucideIcon> = {
+  administration: BriefcaseBusiness,
+  finance: BadgeDollarSign,
+  economics: TrendingUp,
+  data: Database,
+  technology: Cpu,
+  cyber: ShieldCheck,
+  design: Palette,
+  policy: Landmark,
+  projects: ClipboardCheck,
+  regulation: Scale,
+  service: Headset,
+  communications: MessageSquareText,
+  field: MapPinned,
+  science: FlaskConical,
+  health: HeartPulse,
+  legal: Gavel,
+  people: UsersRound,
+  information: FolderSearch,
+  procurement: ShoppingCart,
+  trades: Wrench,
+};
+
 function Chevron() {
   return <span aria-hidden="true">↘</span>;
 }
 
 export default function ServiceSwitchboard() {
   const [form, setForm] = useState<FormState>(initialForm);
-  const [showAllCategories, setShowAllCategories] = useState(false);
   const [map, setMap] = useState<CareerMap | null>(null);
   const [generatedAt, setGeneratedAt] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [copied, setCopied] = useState(false);
   const resultsRef = useRef<HTMLElement>(null);
-
-  const visibleCategories = showAllCategories
-    ? careerCategories
-    : careerCategories.slice(0, 10);
 
   const groupedMatches = useMemo(() => {
     const groups: Record<Pathway, CareerMap["agencyMatches"]> = {
@@ -254,10 +295,7 @@ export default function ServiceSwitchboard() {
       </section>
 
       <section className="trust-strip" aria-label="Service principles">
-        <span>Mobile first</span>
-        <span>Official sources</span>
-        <span>No eligibility guesses</span>
-        <span>No account needed</span>
+        <span>No account required.</span>
       </section>
 
       <section className="mapper-section" id="mapper">
@@ -275,11 +313,12 @@ export default function ServiceSwitchboard() {
         <form onSubmit={submit} className="mapper-form">
           <fieldset className="form-block categories-block">
             <legend>
-              <span>1</span> What kinds of work interest you?
+              <span>1</span> What work interests you?
             </legend>
             <div className="category-grid">
-              {visibleCategories.map((category) => {
+              {careerCategories.map((category) => {
                 const selected = form.interests.includes(category.id);
+                const CategoryIcon = categoryIcons[category.id] ?? BriefcaseBusiness;
                 return (
                   <button
                     className={`category-card${selected ? " selected" : ""}`}
@@ -289,7 +328,7 @@ export default function ServiceSwitchboard() {
                     onClick={() => toggleInterest(category.id)}
                   >
                     <span className="category-mark" aria-hidden="true">
-                      {category.mark}
+                      <CategoryIcon strokeWidth={2.2} />
                     </span>
                     <span>
                       <strong>{category.label}</strong>
@@ -300,13 +339,6 @@ export default function ServiceSwitchboard() {
                 );
               })}
             </div>
-            <button
-              type="button"
-              className="show-more"
-              onClick={() => setShowAllCategories((current) => !current)}
-            >
-              {showAllCategories ? "Show fewer areas" : "Show all 20 career areas"}
-            </button>
             <p className="selection-count" aria-live="polite">
               {form.interests.length} selected · maximum 8
             </p>
@@ -337,8 +369,8 @@ export default function ServiceSwitchboard() {
               </div>
               <img
                 className="form-sticker colleague-sticker"
-                src="/koala-colleague-sticker.png"
-                alt="A friendly koala colleague ready to help"
+                src="/koala-coffee-chat-sticker.png"
+                alt="Two koala colleagues discussing career options over coffee"
               />
             </div>
           </fieldset>
@@ -725,6 +757,17 @@ export default function ServiceSwitchboard() {
             <span>US Citizen. Full Australian working rights.</span>
             <a href="mailto:Kasey.Robinson@abs.gov.au">Kasey.Robinson@abs.gov.au</a>
           </div>
+          <p className="footer-inspiration">
+            Ollie was inspired by the koala featured in{" "}
+            <a
+              href="https://www.abs.gov.au/about/our-organisation/our-commitments/certification-statement-2026-census-campaign"
+              target="_blank"
+              rel="noreferrer"
+            >
+              ABS Census advertising
+            </a>
+            . I chose him because I would like to join a technology team.
+          </p>
         </div>
       </footer>
     </main>

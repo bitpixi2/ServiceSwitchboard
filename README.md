@@ -105,7 +105,7 @@ I would not release that capability without authentication, rate limits, logging
 | **Information used** | Skills and preferences entered by the user; the APS Job Family Framework; public organisation, citizenship and security-clearance guidance. |
 | **Limitations** | It does not search live vacancies, verify facts about a person or make recruitment, visa, citizenship or clearance decisions. |
 | **Risks** | Generative AI may overgeneralise experience, miss a suitable path or use information that has changed. Users must check current official advice. |
-| **Tools used** | OpenAI generative AI, Next.js, curated Australian Government sources, Sites hosting and AI-assisted coding and design tools. |
+| **Tools used** | OpenAI generative AI, Next.js, Lucide icons, curated Australian Government sources, Sites hosting and AI-assisted coding and design tools. |
 
 ## Ready-to-send contest email
 
@@ -129,7 +129,7 @@ I would not release that capability without authentication, rate limits, logging
 > - **Information used:** User-entered skills and preferences, the APS Job Family Framework and public Australian Government information.
 > - **Limitations:** The bot does not search live vacancies or make recruitment, visa, citizenship or security-clearance decisions.
 > - **Risks:** Generative AI may miss a suitable path or use information that has changed. Users must check current official advice.
-> - **Tools used:** OpenAI generative AI, Next.js, curated Australian Government sources, Sites hosting and AI-assisted coding and design tools.
+> - **Tools used:** OpenAI generative AI, Next.js, Lucide icons, curated Australian Government sources, Sites hosting and AI-assisted coding and design tools.
 >
 > **Acknowledgement:** I acknowledge that this bot is my work. I used generative AI and coding assistance to build the prototype, as disclosed in the Bot Card, and I am responsible for this submission.
 >
