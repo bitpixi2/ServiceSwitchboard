@@ -656,11 +656,19 @@ export default function ServiceSwitchboard() {
       </section>
 
       <section className="bot-card-section" id="bot-card">
-        <div className="bot-card-title">
-          <span>IM2026</span>
-          <div>
-            <p>Bot card</p>
-            <h2>Service Switchboard</h2>
+        <div className="bot-card-intro">
+          <span className="bot-card-mascot">
+            <img
+              src="/koala-switchboard-bot-simple.png"
+              alt="Service Switchboard koala wearing a suit and round glasses"
+            />
+          </span>
+          <div className="bot-card-title">
+            <span>IM2026</span>
+            <div>
+              <p>Bot card</p>
+              <h2>Service Switchboard</h2>
+            </div>
           </div>
         </div>
         <dl className="bot-card-grid">
