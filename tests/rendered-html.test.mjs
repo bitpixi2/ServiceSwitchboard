@@ -97,13 +97,11 @@ test("server-renders the Service Switchboard MVP", async () => {
   );
   assert.match(html, /linkedin\.com\/in\/bitpixi/);
   assert.match(html, /github\.com\/bitpixi2\/ServiceSwitchboard/);
-  assert.match(
-    html,
-    /Census Engagement Manager for Inclusive Strategies and Engagement in Central Victoria/,
-  );
+  assert.match(html, /<strong>Census Engagement Manager<\/strong> for/);
+  assert.match(html, /<em>Inclusive Strategies and Engagement<\/em> in Central Victoria/);
   assert.match(html, /Australian Bureau of Statistics \(ABS\)/);
   assert.match(html, /href="https:\/\/www\.abs\.gov\.au\/"/);
-  assert.match(html, /US Citizen\. Full Australian working rights\./);
+  assert.match(html, /US Citizen\. <em>Full Australian working rights\.<\/em>/);
   assert.match(html, /kasey\.robinson@abs\.gov\.au/);
   assert.doesNotMatch(html, /Kasey\.Robinson@abs\.gov\.au/);
   assert.match(html, /koala-suitcase-sticker\.png/);
@@ -202,6 +200,30 @@ test("loading experience explains the wait and names each result section", async
   assert.match(styles, /\.coffee-sticker\s*\{[^}]*height: min\(220px, 64vw\);/s);
   assert.match(styles, /\.hero h1 > span\s*\{[^}]*white-space: nowrap;/s);
   assert.match(styles, /@keyframes submit-shimmer/);
+  assert.match(
+    styles,
+    /@media \(min-width: 901px\)[\s\S]*?\.hero-copy\s*\{[^}]*justify-items: center;[^}]*text-align: center;/,
+  );
+  assert.match(
+    styles,
+    /@media \(min-width: 901px\)[\s\S]*?\.hero-lede\s*\{[^}]*max-width: 920px;[^}]*white-space: nowrap;/,
+  );
+  assert.match(
+    styles,
+    /@media \(min-width: 901px\)[\s\S]*?\.hero-actions\s*\{[^}]*border-bottom:[^;}]+;[^}]*justify-content: center;/,
+  );
+  assert.match(
+    styles,
+    /@media \(min-width: 901px\)[\s\S]*?\.submit-row\s*\{[^}]*flex-direction: column;[^}]*text-align: center;/,
+  );
+  assert.match(
+    styles,
+    /@media \(min-width: 901px\)[\s\S]*?\.bot-card-graphic\s*\{[^}]*width: 50%;/,
+  );
+  assert.match(
+    styles,
+    /@media \(min-width: 901px\)[\s\S]*?\.footer-contact nav\s*\{[^}]*flex-wrap: nowrap;/,
+  );
 });
 
 test("generated results can be saved as a local PDF", async () => {

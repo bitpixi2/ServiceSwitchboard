@@ -938,13 +938,15 @@ export default function ServiceSwitchboard() {
           </nav>
           <div className="footer-contact-details">
             <span>
-              Census Engagement Manager for Inclusive Strategies and Engagement in
-              Central Victoria
+              <strong>Census Engagement Manager</strong> for{" "}
+              <em>Inclusive Strategies and Engagement</em> in Central Victoria
             </span>
             <a href="https://www.abs.gov.au/" target="_blank" rel="noreferrer">
               Australian Bureau of Statistics (ABS)
             </a>
-            <span>US Citizen. Full Australian working rights.</span>
+            <span>
+              US Citizen. <em>Full Australian working rights.</em>
+            </span>
             <a href="mailto:kasey.robinson@abs.gov.au">kasey.robinson@abs.gov.au</a>
           </div>
         </div>
