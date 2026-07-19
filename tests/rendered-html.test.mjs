@@ -30,7 +30,7 @@ test("server-renders the Service Switchboard MVP", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>IM2026 Service Switchboard<\/title>/i);
-  assert.match(html, /Find your next public service role\./);
+  assert.match(html, /Find your next[\s\S]*public service role\./);
   assert.match(
     html,
     /Match your skills to Australian Government roles and organisations worth exploring\./,
@@ -42,7 +42,7 @@ test("server-renders the Service Switchboard MVP", async () => {
   );
   assert.ok(
     html.indexOf("G’day! I’m your Service Switchboard bot.") <
-      html.indexOf("Find your next public service role."),
+      html.indexOf("Find your next"),
     "bot greeting should appear before the hero headline",
   );
   assert.ok(
@@ -72,7 +72,8 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.match(html, /Trades, facilities and logistics/);
   assert.doesNotMatch(html, /Show all 20 career areas|Show fewer areas/);
   assert.doesNotMatch(html, /Your switchboard to your next Australian Government job\./);
-  assert.equal(html.match(/Build my job switch/g)?.length, 2);
+  assert.equal(html.match(/Build my job switch/g)?.length, 1);
+  assert.match(html, /Calculate my results/);
   assert.doesNotMatch(html, /Build my map|Build my career map/);
   assert.doesNotMatch(html, /[↘↗→]/);
   assert.doesNotMatch(html, /Go to Bot Card/);
@@ -180,6 +181,7 @@ test("loading experience explains the wait and names each result section", async
   assert.match(source, /function LinkedInMark/);
   assert.match(source, /function GitHubMark/);
   assert.match(source, /ArrowDownRight/);
+  assert.equal(source.match(/<Chevron \/>/g)?.length, 1);
   assert.match(source, /ExternalLink/);
   assert.doesNotMatch(source, /[↘↗→]/);
   assert.match(source, /interests: \["technology", "design", "data", "cyber", "field"\]/);
@@ -187,8 +189,10 @@ test("loading experience explains the wait and names each result section", async
   assert.doesNotMatch(styles, /\.preview-guide\s*\{[^}]*border-top:/s);
   assert.match(styles, /\.privacy-note,[\s\S]*?font-style: italic;/);
   assert.match(styles, /\.character-count\s*\{[^}]*font-style: normal;/s);
-  assert.match(styles, /\.coffee-sticker\s*\{[^}]*width: 340px;/s);
-  assert.match(styles, /\.coffee-sticker\s*\{[^}]*width: min\(280px, 78vw\);/s);
+  assert.match(styles, /\.coffee-sticker\s*\{[^}]*height: 290px;[^}]*width: auto;/s);
+  assert.match(styles, /\.coffee-sticker\s*\{[^}]*height: min\(220px, 64vw\);/s);
+  assert.match(styles, /\.hero h1 > span\s*\{[^}]*white-space: nowrap;/s);
+  assert.match(styles, /@keyframes submit-shimmer/);
 });
 
 test("generated results can be saved as a local PDF", async () => {

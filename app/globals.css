@@ -578,7 +578,8 @@ main {
 }
 
 .coffee-sticker {
-  width: 340px;
+  height: 290px;
+  width: auto;
 }
 
 .ute-sticker {
@@ -657,6 +658,25 @@ main {
 
 .submit-button {
   min-width: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.submit-button:not(:disabled)::after {
+  animation: submit-shimmer 4.2s ease-in-out infinite;
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.05) 43%,
+    rgba(255, 255, 255, 0.24) 50%,
+    rgba(255, 255, 255, 0.05) 57%,
+    transparent 70%
+  );
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(-130%);
 }
 
 .submit-button:disabled {
@@ -677,6 +697,17 @@ main {
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes submit-shimmer {
+  0%,
+  68%,
+  100% {
+    transform: translateX(-130%);
+  }
+  86% {
+    transform: translateX(130%);
   }
 }
 
@@ -1597,7 +1628,8 @@ footer span {
   }
 
   .coffee-sticker {
-    width: 300px;
+    height: 250px;
+    width: auto;
   }
 
   .skill-list {
@@ -1642,9 +1674,14 @@ footer span {
   }
 
   .hero h1 {
-    font-size: clamp(48px, 14vw, 62px);
+    font-size: clamp(36px, 11vw, 48px);
     letter-spacing: -0.055em;
     line-height: 0.94;
+  }
+
+  .hero h1 > span {
+    display: block;
+    white-space: nowrap;
   }
 
   .kicker {
@@ -1731,7 +1768,8 @@ footer span {
   }
 
   .coffee-sticker {
-    width: min(280px, 78vw);
+    height: min(220px, 64vw);
+    width: auto;
   }
 
   .ute-sticker {

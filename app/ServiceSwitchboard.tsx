@@ -418,7 +418,10 @@ export default function ServiceSwitchboard() {
             </div>
           </div>
 
-          <h1>Find your next public service role.</h1>
+          <h1>
+            <span>Find your next</span>{" "}
+            <span>public service role.</span>
+          </h1>
 
           <p className="hero-lede">
             Match your skills to Australian Government roles and organisations
@@ -626,9 +629,7 @@ export default function ServiceSwitchboard() {
                   <span className="spinner" aria-hidden="true" /> Mapping possible paths…
                 </>
               ) : (
-                <>
-                  Build my job switch <Chevron />
-                </>
+                <>Calculate my results</>
               )}
             </button>
             <p>
