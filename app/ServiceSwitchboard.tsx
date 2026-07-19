@@ -401,24 +401,24 @@ export default function ServiceSwitchboard() {
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <h1>Find your next public service role.</h1>
-
           <div
             className="switchboard-preview"
-            aria-label="Meet Ollie, the Service Switchboard bot"
+            aria-label="Service Switchboard bot greeting"
           >
             <div className="preview-guide">
+              <span className="preview-guide-copy">
+                <strong>G’day! I’m your Service Switchboard bot.</strong>
+              </span>
               <span className="preview-guide-image">
                 <img
                   src="/koala-switchboard-sticker.png"
                   alt="Ollie the Koala operating a colourful switchboard"
                 />
               </span>
-              <span className="preview-guide-copy">
-                <strong>G’day! I’m your Service Switchboard bot.</strong>
-              </span>
             </div>
           </div>
+
+          <h1>Find your next public service role.</h1>
 
           <p className="hero-lede">
             Match your skills to Australian Government roles and organisations

@@ -130,14 +130,14 @@ main {
 }
 
 .hero-copy {
-  align-items: center;
-  column-gap: 60px;
+  align-items: start;
   display: grid;
   grid-template-areas:
-    "title guide"
-    "lede guide"
-    "actions guide";
-  grid-template-columns: minmax(0, 1.05fr) minmax(380px, 0.95fr);
+    "guide"
+    "title"
+    "lede"
+    "actions";
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .hero-copy > h1 {
@@ -251,11 +251,14 @@ main {
   display: flex;
   grid-area: guide;
   justify-content: center;
-  min-height: 260px;
+  margin-bottom: 48px;
+  max-width: 720px;
+  min-height: 220px;
   overflow: hidden;
-  padding: 30px 38px 38px;
+  padding: 24px 40px;
   position: relative;
-  transform: rotate(1.5deg);
+  transform: rotate(-0.8deg);
+  width: 100%;
 }
 
 .switchboard-preview::before {
@@ -281,18 +284,20 @@ main {
 .preview-guide {
   align-items: center;
   display: flex;
-  gap: 16px;
+  gap: 30px;
+  justify-content: space-between;
   margin: 0 auto;
-  max-width: 350px;
+  max-width: 610px;
   position: relative;
+  width: 100%;
   z-index: 1;
 }
 
 .preview-guide-image {
   align-items: center;
   display: flex;
-  flex: 0 0 132px;
-  height: 132px;
+  flex: 0 0 190px;
+  height: 190px;
   justify-content: center;
 }
 
@@ -307,16 +312,17 @@ main {
   background: var(--white);
   border-radius: 18px;
   color: var(--ink);
-  padding: 18px 20px;
+  flex: 1 1 auto;
+  padding: 22px 24px;
   position: relative;
 }
 
 .preview-guide-copy::before {
   border-bottom: 10px solid transparent;
-  border-right: 13px solid var(--white);
+  border-left: 13px solid var(--white);
   border-top: 10px solid transparent;
   content: "";
-  left: -13px;
+  right: -13px;
   position: absolute;
   top: 28px;
 }
@@ -324,7 +330,7 @@ main {
 .preview-guide-copy strong {
   display: block;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
   line-height: 1.25;
 }
@@ -1556,8 +1562,8 @@ footer span {
 
   .hero-copy {
     grid-template-areas:
-      "title"
       "guide"
+      "title"
       "lede"
       "actions";
     grid-template-columns: 1fr;
@@ -1570,8 +1576,8 @@ footer span {
 
   .switchboard-preview {
     justify-self: center;
-    max-width: 560px;
-    min-height: 260px;
+    max-width: 640px;
+    min-height: 220px;
     transform: none;
     width: 100%;
   }
@@ -1665,7 +1671,8 @@ footer span {
     background: transparent;
     box-shadow: none;
     justify-self: stretch;
-    margin-top: 10px;
+    margin-bottom: 24px;
+    margin-top: 6px;
     min-height: auto;
     overflow: visible;
     padding: 0;
@@ -1678,23 +1685,23 @@ footer span {
   }
 
   .preview-guide {
-    gap: 12px;
-    justify-content: flex-start;
+    gap: 10px;
+    justify-content: space-between;
     max-width: none;
     width: 100%;
   }
 
   .preview-guide-image {
-    flex-basis: 88px;
-    height: 88px;
+    flex-basis: 132px;
+    height: 132px;
   }
 
   .preview-guide-copy {
-    padding: 12px 14px;
+    padding: 14px 16px;
   }
 
   .preview-guide-copy strong {
-    font-size: 16px;
+    font-size: 17px;
   }
 
   .mapper-section,
