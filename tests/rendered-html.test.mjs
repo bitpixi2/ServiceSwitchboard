@@ -83,6 +83,7 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.doesNotMatch(html, /WORKING PROTOTYPE|working prototype/);
   assert.doesNotMatch(html, /service-switchboard-logo\.png/);
   assert.match(html, /service-switchboard-bot-card\.png/);
+  assert.match(html, /class="share-card-graphic"[^>]*src="\/og\.png"/);
   assert.match(html, /IM2026 Service Switchboard Bot Card\. Purpose:/);
   assert.match(html, /No live vacancies\. No recruitment, visa, citizenship or clearance decisions\./);
   assert.match(html, /switchboard\.bitpixi\.com by Kasey Robinson, ABS\./);
@@ -140,6 +141,19 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.doesNotMatch(html, /More than one path fits\./);
   assert.doesNotMatch(html, /Official structure in\. Cautious suggestions out\./);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/);
+});
+
+test("social shares use the supplied Service Switchboard card", async () => {
+  const [layoutSource, shareCard] = await Promise.all([
+    readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../public/og.png", import.meta.url)),
+  ]);
+
+  assert.match(layoutSource, /openGraph:[\s\S]*?url: `\$\{origin\}\/og\.png`/);
+  assert.match(layoutSource, /twitter:[\s\S]*?images: \[`\$\{origin\}\/og\.png`\]/);
+  assert.match(layoutSource, /IM2026 Service Switchboard share card/);
+  assert.equal(shareCard.readUInt32BE(16), 1536);
+  assert.equal(shareCard.readUInt32BE(20), 1024);
 });
 
 test("llms.txt contains the complete README and contact details", async () => {
@@ -218,7 +232,11 @@ test("loading experience explains the wait and names each result section", async
   );
   assert.match(
     styles,
-    /@media \(min-width: 901px\)[\s\S]*?\.bot-card-graphic\s*\{[^}]*width: 50%;/,
+    /@media \(min-width: 901px\)[\s\S]*?\.bot-card-section\s*\{[^}]*grid-template-columns: repeat\(2, minmax\(0, 1fr\)\);/,
+  );
+  assert.match(
+    styles,
+    /@media \(min-width: 901px\)[\s\S]*?\.share-card-graphic\s*\{[^}]*display: block;/,
   );
   assert.match(
     styles,

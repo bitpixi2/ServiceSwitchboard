@@ -1,8 +1,10 @@
 # IM2026 Service Switchboard
 
 <p align="center">
-  <img src="public/koala-switchboard-sticker.png" alt="Ollie the Koala operating the Service Switchboard" width="380">
+  <img src="public/og.png" alt="IM2026 Service Switchboard share card showing a central profile branching to Australian public-service pathways">
 </p>
+
+<p align="center"><em>IM2026 Service Switchboard social share card.</em></p>
 
 **A mobile-first career guide for finding where your skills could fit across the Australian Public Service.**
 
@@ -11,6 +13,10 @@
 IM2026 Service Switchboard helps current, non-ongoing and prospective public servants describe the work they can do, not just the job title they have now. Generative AI turns that information into role families, public missions, organisations to explore and practical next steps.
 
 This is an independent prototype for the Australian Government Innovation Month bot challenge in **The Complexity Tamer** category.
+
+<p align="center">
+  <img src="public/koala-switchboard-sticker.png" alt="Ollie the Koala operating the Service Switchboard" width="380">
+</p>
 
 ## Why it fits the challenge
 

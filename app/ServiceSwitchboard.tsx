@@ -913,6 +913,11 @@ export default function ServiceSwitchboard() {
           src="/service-switchboard-bot-card.png"
           alt={botCardAlt}
         />
+        <img
+          className="share-card-graphic"
+          src="/og.png"
+          alt="IM2026 Service Switchboard share card showing a central profile branching to Australian public-service pathways"
+        />
       </section>
 
       <footer>

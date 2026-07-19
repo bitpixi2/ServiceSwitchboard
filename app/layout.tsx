@@ -38,7 +38,7 @@ export async function generateMetadata(): Promise<Metadata> {
           url: `${origin}/og.png`,
           width: 1536,
           height: 1024,
-          alt: "IM2026 Service Switchboard career pathway map",
+          alt: "IM2026 Service Switchboard share card showing a central profile branching to Australian public-service pathways",
         },
       ],
     },
