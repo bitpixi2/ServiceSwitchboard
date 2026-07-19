@@ -35,6 +35,11 @@ test("server-renders the Service Switchboard MVP", async () => {
     html,
     /Match your skills to Australian Government roles and organisations worth exploring\./,
   );
+  assert.ok(
+    html.indexOf("G’day! I’m your Service Switchboard bot.") <
+      html.indexOf("Match your skills to Australian Government roles"),
+    "bot greeting should appear before the supporting hero copy",
+  );
   assert.doesNotMatch(html, /See where you could serve Australia next\./);
   assert.match(html, /What work interests you\?/);
   assert.match(html, /class="form-step-heading" id="work-interests-heading"/);

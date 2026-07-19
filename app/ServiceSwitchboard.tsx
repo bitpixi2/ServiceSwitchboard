@@ -398,6 +398,24 @@ export default function ServiceSwitchboard() {
         <div className="hero-copy">
           <p className="kicker">Your skills can travel</p>
           <h1>Find your next public service role.</h1>
+
+          <div
+            className="switchboard-preview"
+            aria-label="Meet Ollie, the Service Switchboard bot"
+          >
+            <div className="preview-guide">
+              <span className="preview-guide-image">
+                <img
+                  src="/koala-switchboard-sticker.png"
+                  alt="Ollie the Koala operating a colourful switchboard"
+                />
+              </span>
+              <span className="preview-guide-copy">
+                <strong>G’day! I’m your Service Switchboard bot.</strong>
+              </span>
+            </div>
+          </div>
+
           <p className="hero-lede">
             Match your skills to Australian Government roles and organisations
             worth exploring.
@@ -409,23 +427,6 @@ export default function ServiceSwitchboard() {
             <button className="button text-button" type="button" onClick={loadExample}>
               Use a sample profile
             </button>
-          </div>
-        </div>
-
-        <div
-          className="switchboard-preview"
-          aria-label="Meet Ollie, the Service Switchboard bot"
-        >
-          <div className="preview-guide">
-            <span className="preview-guide-image">
-              <img
-                src="/koala-switchboard-sticker.png"
-                alt="Ollie the Koala operating a colourful switchboard"
-              />
-            </span>
-            <span className="preview-guide-copy">
-              <strong>G’day! I’m your Service Switchboard bot.</strong>
-            </span>
           </div>
         </div>
       </section>

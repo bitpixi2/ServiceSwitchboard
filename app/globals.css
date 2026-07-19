@@ -128,15 +128,39 @@ main {
 }
 
 .hero {
-  align-items: center;
-  display: grid;
-  gap: 60px;
-  grid-template-columns: minmax(0, 1.05fr) minmax(380px, 0.95fr);
   margin: 0 auto;
   max-width: 1220px;
   min-height: 650px;
   padding: 64px 24px 84px;
   position: relative;
+}
+
+.hero-copy {
+  align-items: center;
+  column-gap: 60px;
+  display: grid;
+  grid-template-areas:
+    "kicker guide"
+    "title guide"
+    "lede guide"
+    "actions guide";
+  grid-template-columns: minmax(0, 1.05fr) minmax(380px, 0.95fr);
+}
+
+.hero-copy > .kicker {
+  grid-area: kicker;
+}
+
+.hero-copy > h1 {
+  grid-area: title;
+}
+
+.hero-copy > .hero-lede {
+  grid-area: lede;
+}
+
+.hero-copy > .hero-actions {
+  grid-area: actions;
 }
 
 .hero::before {
@@ -236,6 +260,7 @@ main {
   box-shadow: var(--shadow);
   color: var(--white);
   display: flex;
+  grid-area: guide;
   justify-content: center;
   min-height: 260px;
   overflow: hidden;
@@ -1489,9 +1514,17 @@ footer span {
 
 @media (max-width: 900px) {
   .hero {
-    gap: 42px;
-    grid-template-columns: 1fr;
     padding-top: 58px;
+  }
+
+  .hero-copy {
+    grid-template-areas:
+      "kicker"
+      "title"
+      "guide"
+      "lede"
+      "actions";
+    grid-template-columns: 1fr;
   }
 
   .hero h1 {
@@ -1554,7 +1587,6 @@ footer span {
   }
 
   .hero {
-    gap: 24px;
     min-height: auto;
     padding: 0 16px 32px;
   }
