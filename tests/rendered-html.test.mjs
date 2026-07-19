@@ -42,7 +42,8 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.match(html, /Trades, facilities and logistics/);
   assert.doesNotMatch(html, /Show all 20 career areas|Show fewer areas/);
   assert.doesNotMatch(html, /Your switchboard to your next Australian Government job\./);
-  assert.match(html, /Build my career map/);
+  assert.equal(html.match(/Build my job switch/g)?.length, 2);
+  assert.doesNotMatch(html, /Build my map|Build my career map/);
   assert.doesNotMatch(html, /Go to Bot Card/);
   assert.match(html, /brand-signal/);
   assert.doesNotMatch(html, /service-switchboard-logo\.png/);

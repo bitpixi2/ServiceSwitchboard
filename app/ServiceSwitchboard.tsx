@@ -262,7 +262,7 @@ export default function ServiceSwitchboard() {
           </p>
           <div className="hero-actions">
             <a className="button primary" href="#mapper">
-              Build my map <Chevron />
+              Build my job switch <Chevron />
             </a>
             <button className="button text-button" type="button" onClick={loadExample}>
               Use a sample profile
@@ -471,7 +471,7 @@ export default function ServiceSwitchboard() {
                 </>
               ) : (
                 <>
-                  Build my career map <Chevron />
+                  Build my job switch <Chevron />
                 </>
               )}
             </button>
