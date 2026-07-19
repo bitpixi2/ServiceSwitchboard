@@ -69,43 +69,62 @@ main {
   justify-content: flex-start;
   margin: 0 auto;
   max-width: 1220px;
-  padding: 12px 24px 18px;
+  padding: 20px 24px;
 }
 
 .brand {
-  display: grid;
-  gap: 0;
-  max-width: 360px;
+  align-items: center;
+  display: inline-flex;
+  gap: 12px;
   text-decoration: none;
-  width: 100%;
 }
 
-.brand-logo-frame {
-  display: block;
-  height: 82px;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
+.brand > span:last-child {
+  display: grid;
+  gap: 2px;
 }
 
-.brand-logo {
-  display: block;
-  height: auto;
-  left: 0;
-  mix-blend-mode: multiply;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
+.brand strong {
+  font-size: 15px;
+  letter-spacing: -0.02em;
 }
 
 .brand small {
   color: var(--muted);
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.1em;
-  margin-left: 31%;
-  margin-top: -4px;
   text-transform: uppercase;
+}
+
+.brand-signal {
+  align-items: flex-end;
+  background: var(--ink);
+  border-radius: 50%;
+  display: flex;
+  gap: 3px;
+  height: 40px;
+  justify-content: center;
+  padding: 10px;
+  width: 40px;
+}
+
+.brand-signal i {
+  background: var(--mint);
+  border-radius: 3px;
+  display: block;
+  height: 8px;
+  width: 4px;
+}
+
+.brand-signal i:nth-child(2) {
+  background: var(--yellow);
+  height: 16px;
+}
+
+.brand-signal i:nth-child(3) {
+  background: var(--coral);
+  height: 12px;
 }
 
 .hero {
@@ -1412,15 +1431,11 @@ footer span {
 
 @media (max-width: 640px) {
   .site-header {
-    padding: 8px 16px 14px;
+    padding: 16px;
   }
 
-  .brand {
-    max-width: 290px;
-  }
-
-  .brand-logo-frame {
-    height: 68px;
+  .brand strong {
+    font-size: 13px;
   }
 
   .hero {
@@ -1539,7 +1554,11 @@ footer span {
     width: 86%;
   }
 
-  .mapper-section,
+  .mapper-section {
+    padding-bottom: 76px;
+    padding-top: 32px;
+  }
+
   .results-section,
   .sources-section {
     padding-bottom: 76px;
@@ -1718,6 +1737,7 @@ footer span {
   font-size: 0.875rem;
 }
 
+.brand strong,
 .category-card small,
 .selection-count,
 .story-block label,

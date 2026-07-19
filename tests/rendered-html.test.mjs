@@ -44,7 +44,8 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.doesNotMatch(html, /Your switchboard to your next Australian Government job\./);
   assert.match(html, /Build my career map/);
   assert.doesNotMatch(html, /Go to Bot Card/);
-  assert.match(html, /service-switchboard-logo\.png/);
+  assert.match(html, /brand-signal/);
+  assert.doesNotMatch(html, /service-switchboard-logo\.png/);
   assert.match(html, /Bot card/);
   assert.match(html, /G’day! I’m your Service Switchboard bot\./);
   assert.doesNotMatch(html, /G’day! I’m Ollie/);

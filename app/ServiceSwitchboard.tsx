@@ -240,14 +240,15 @@ export default function ServiceSwitchboard() {
     <main>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="IM2026 Service Switchboard home">
-          <span className="brand-logo-frame" aria-hidden="true">
-            <img
-              className="brand-logo"
-              src="/service-switchboard-logo.png"
-              alt=""
-            />
+          <span className="brand-signal" aria-hidden="true">
+            <i />
+            <i />
+            <i />
           </span>
-          <small>IM2026 · working prototype</small>
+          <span>
+            <strong>Service Switchboard</strong>
+            <small>IM2026 · working prototype</small>
+          </span>
         </a>
       </header>
 
