@@ -170,9 +170,10 @@ test("llms.txt contains the complete README and contact details", async () => {
 });
 
 test("loading experience explains the wait and names each result section", async () => {
-  const [source, styles] = await Promise.all([
+  const [source, styles, wavingSticker] = await Promise.all([
     readFile(new URL("../app/ServiceSwitchboard.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+    readFile(new URL("../public/koala-switchboard-bot-simple.png", import.meta.url)),
   ]);
 
   assert.match(source, /This process takes approximately 1–2 minutes/);
@@ -180,6 +181,7 @@ test("loading experience explains the wait and names each result section", async
   assert.doesNotMatch(source, /className="loading-mascot"/);
   assert.match(source, /koala-switchboard-bot-simple\.png/);
   assert.equal(source.match(/koala-coffee-chat-sticker\.png/g)?.length, 1);
+  assert.equal(wavingSticker[25], 6, "waving koala sticker must use PNG RGBA colour");
   assert.match(source, /role="progressbar"/);
   assert.match(source, /Role families to search/);
   assert.match(source, /Organisations worth investigating/);
