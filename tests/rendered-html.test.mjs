@@ -187,6 +187,8 @@ test("loading experience explains the wait and names each result section", async
   assert.doesNotMatch(styles, /\.preview-guide\s*\{[^}]*border-top:/s);
   assert.match(styles, /\.privacy-note,[\s\S]*?font-style: italic;/);
   assert.match(styles, /\.character-count\s*\{[^}]*font-style: normal;/s);
+  assert.match(styles, /\.coffee-sticker\s*\{[^}]*width: 340px;/s);
+  assert.match(styles, /\.coffee-sticker\s*\{[^}]*width: min\(280px, 78vw\);/s);
 });
 
 test("generated results can be saved as a local PDF", async () => {

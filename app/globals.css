@@ -577,6 +577,10 @@ main {
   line-height: 1.55;
 }
 
+.coffee-sticker {
+  width: 340px;
+}
+
 .ute-sticker {
   width: 310px;
 }
@@ -1592,6 +1596,10 @@ footer span {
     width: 210px;
   }
 
+  .coffee-sticker {
+    width: 300px;
+  }
+
   .skill-list {
     justify-content: flex-start;
   }
@@ -1720,6 +1728,10 @@ footer span {
   .section-sticker {
     margin-top: 0;
     width: min(170px, 48vw);
+  }
+
+  .coffee-sticker {
+    width: min(280px, 78vw);
   }
 
   .ute-sticker {
