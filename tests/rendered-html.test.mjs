@@ -109,6 +109,24 @@ test("llms.txt contains the complete README and contact details", async () => {
   assert.doesNotMatch(llms, /Agency and careers links are a curated prototype snapshot/);
 });
 
+test("loading experience explains the wait and names each result section", async () => {
+  const source = await readFile(
+    new URL("../app/ServiceSwitchboard.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /This process takes approximately 1–2 minutes/);
+  assert.match(source, /please keep this\s+tab open while we build your results/);
+  assert.match(source, /koala-switchboard-bot-simple\.png/);
+  assert.match(source, /role="progressbar"/);
+  assert.match(source, /Role families to search/);
+  assert.match(source, /Organisations worth investigating/);
+  assert.match(source, /Practical next steps/);
+  assert.match(source, /Globe2 aria-hidden="true"/);
+  assert.match(source, /function LinkedInMark/);
+  assert.match(source, /function GitHubMark/);
+});
+
 test("AI endpoint fails safely when the server key is absent", async () => {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("api-test", `${process.pid}-${Date.now()}`);

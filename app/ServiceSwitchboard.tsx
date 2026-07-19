@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useMemo, useRef, useState } from "react";
+import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 import {
   BadgeDollarSign,
@@ -11,6 +11,7 @@ import {
   FlaskConical,
   FolderSearch,
   Gavel,
+  Globe2,
   Headset,
   HeartPulse,
   Landmark,
@@ -124,8 +125,57 @@ const categoryIcons: Record<string, LucideIcon> = {
   trades: Wrench,
 };
 
+const loadingStages = [
+  {
+    title: "Reading your profile",
+    detail: "Understanding your background, interests and work preferences.",
+  },
+  {
+    title: "Transferable skills",
+    detail: "Finding strengths that could travel across the public service.",
+  },
+  {
+    title: "Career pathway map",
+    detail: "Connecting your experience to more than one possible direction.",
+  },
+  {
+    title: "Role families to search",
+    detail: "Preparing useful job titles and search terms.",
+  },
+  {
+    title: "Organisations worth investigating",
+    detail: "Matching your interests to Australian Government organisations.",
+  },
+  {
+    title: "Practical next steps",
+    detail: "Writing a small next move and a question for recruitment.",
+  },
+] as const;
+
 function Chevron() {
   return <span aria-hidden="true">↘</span>;
+}
+
+function GitHubMark() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24">
+      <path
+        fill="currentColor"
+        d="M12 .5C5.73.5.65 5.58.65 11.85c0 5.02 3.25 9.28 7.76 10.78.57.1.78-.25.78-.55v-2.14c-3.16.69-3.83-1.34-3.83-1.34-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.74 2.66 1.24 3.31.95.1-.73.4-1.24.72-1.52-2.52-.29-5.17-1.26-5.17-5.61 0-1.24.44-2.25 1.17-3.05-.12-.29-.51-1.44.11-3 0 0 .95-.31 3.12 1.16a10.8 10.8 0 0 1 5.68 0c2.17-1.47 3.12-1.16 3.12-1.16.62 1.56.23 2.71.11 3 .73.8 1.17 1.81 1.17 3.05 0 4.36-2.65 5.32-5.18 5.6.41.35.77 1.05.77 2.12v3.14c0 .3.2.66.78.55a11.36 11.36 0 0 0 7.76-10.78C23.35 5.58 18.27.5 12 .5Z"
+      />
+    </svg>
+  );
+}
+
+function LinkedInMark() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24">
+      <path
+        fill="currentColor"
+        d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM2.8 9.8h4.36V23H2.8V9.8Zm6.95 0h4.18v1.8h.06c.58-1.1 2-2.26 4.11-2.26 4.4 0 5.21 2.9 5.21 6.67V23h-4.35v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.38 1.61-2.38 3.27V23H9.75V9.8Z"
+      />
+    </svg>
+  );
 }
 
 export default function ServiceSwitchboard() {
@@ -134,8 +184,34 @@ export default function ServiceSwitchboard() {
   const [generatedAt, setGeneratedAt] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [loadingProgress, setLoadingProgress] = useState(8);
+  const [loadingStage, setLoadingStage] = useState(0);
   const [copied, setCopied] = useState(false);
   const resultsRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!loading) return;
+
+    const previousOverflow = document.body.style.overflow;
+    const startedAt = Date.now();
+    document.body.style.overflow = "hidden";
+
+    const updateLoadingState = () => {
+      const elapsedSeconds = (Date.now() - startedAt) / 1000;
+      setLoadingProgress(Math.min(92, Math.round(8 + elapsedSeconds * 1.15)));
+      setLoadingStage(
+        Math.min(loadingStages.length - 1, Math.floor(elapsedSeconds / 7)),
+      );
+    };
+
+    updateLoadingState();
+    const interval = window.setInterval(updateLoadingState, 1000);
+
+    return () => {
+      window.clearInterval(interval);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [loading]);
 
   const groupedMatches = useMemo(() => {
     const groups: Record<Pathway, CareerMap["agencyMatches"]> = {
@@ -191,6 +267,8 @@ export default function ServiceSwitchboard() {
       return;
     }
 
+    setLoadingProgress(8);
+    setLoadingStage(0);
     setLoading(true);
     try {
       const response = await fetch("/api/map", {
@@ -238,6 +316,65 @@ export default function ServiceSwitchboard() {
 
   return (
     <main>
+      {loading && (
+        <div className="loading-overlay" role="presentation">
+          <section
+            className="loading-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="loading-title"
+            aria-describedby="loading-description"
+          >
+            <div className="loading-mascot" aria-hidden="true">
+              <img src="/koala-switchboard-bot-simple.png" alt="" />
+            </div>
+            <div className="loading-content">
+              <p className="kicker">Building your job switch</p>
+              <h2 id="loading-title">Your results are on the way.</h2>
+              <p id="loading-description" className="loading-warning">
+                This process takes approximately 1–2 minutes, so please keep this
+                tab open while we build your results.
+              </p>
+
+              <div className="loading-now" aria-live="polite" aria-atomic="true">
+                <small>Now preparing</small>
+                <strong>{loadingStages[loadingStage].title}</strong>
+                <span>{loadingStages[loadingStage].detail}</span>
+              </div>
+
+              <div
+                className="loading-progress"
+                role="progressbar"
+                aria-label="Job switch progress"
+                aria-valuemin={0}
+                aria-valuemax={100}
+                aria-valuenow={loadingProgress}
+              >
+                <span style={{ width: `${loadingProgress}%` }} />
+              </div>
+
+              <ol className="loading-stages" aria-label="Result sections being prepared">
+                {loadingStages.map((stage, index) => (
+                  <li
+                    className={
+                      index < loadingStage
+                        ? "complete"
+                        : index === loadingStage
+                          ? "active"
+                          : undefined
+                    }
+                    key={stage.title}
+                  >
+                    <span aria-hidden="true">{index < loadingStage ? "✓" : index + 1}</span>
+                    {stage.title}
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </section>
+        </div>
+      )}
+
       <header className="site-header">
         <a className="brand" href="#top" aria-label="IM2026 Service Switchboard home">
           <span className="brand-signal" aria-hidden="true">
@@ -710,17 +847,20 @@ export default function ServiceSwitchboard() {
           <strong>Kasey Robinson</strong>
           <nav aria-label="Kasey Robinson contact links">
             <a href="https://bitpixi.com" target="_blank" rel="noreferrer">
-              Website
+              <Globe2 aria-hidden="true" />
+              <span>Website</span>
             </a>
             <a href="https://linkedin.com/in/bitpixi" target="_blank" rel="noreferrer">
-              LinkedIn
+              <LinkedInMark />
+              <span>LinkedIn</span>
             </a>
             <a
               href="https://github.com/bitpixi2/ServiceSwitchboard"
               target="_blank"
               rel="noreferrer"
             >
-              GitHub
+              <GitHubMark />
+              <span>GitHub</span>
             </a>
           </nav>
           <div className="footer-contact-details">
