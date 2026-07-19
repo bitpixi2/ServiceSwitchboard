@@ -238,31 +238,18 @@ export default function ServiceSwitchboard() {
             <span className="preview-guide-image">
               <img
                 src="/koala-switchboard-sticker.png"
-                alt="Kasey the Koala operating a colourful switchboard"
+                alt="Ollie the Koala operating a colourful switchboard"
               />
             </span>
             <span className="preview-guide-copy">
               <small>Your guide</small>
-              <strong>
-                Hey I&apos;m Kasey the Koala, your Service Switchboard bot!
-              </strong>
+              <strong>G’day! I’m Ollie, your Service Switchboard bot.</strong>
             </span>
           </div>
           <div className="preview-source">
             <span>Your experience</span>
             <strong>Skills that can travel</strong>
           </div>
-          <div className="route-line" aria-hidden="true">
-            <i />
-            <i />
-            <i />
-          </div>
-          <div className="preview-destinations">
-            <span>Role families</span>
-            <span>Public missions</span>
-            <span>Possible paths</span>
-          </div>
-          <p>One profile. More than one possible path.</p>
         </div>
       </section>
 
@@ -281,7 +268,7 @@ export default function ServiceSwitchboard() {
           <img
             className="section-sticker suitcase-sticker"
             src="/koala-suitcase-sticker.png"
-            alt="Kasey the Koala setting out with a suitcase"
+            alt="Ollie the Koala setting out with a suitcase"
           />
         </div>
 
@@ -445,7 +432,7 @@ export default function ServiceSwitchboard() {
               <img
                 className="form-sticker high-vis-sticker"
                 src="/koala-high-vis-ute-sticker.png"
-                alt="Kasey the Koala in high-visibility workwear beside a utility ute"
+                alt="Ollie the Koala with his paws in his high-vis vest pockets beside a utility ute"
               />
             </div>
           </fieldset>
@@ -660,7 +647,7 @@ export default function ServiceSwitchboard() {
           <span className="bot-card-mascot">
             <img
               src="/koala-switchboard-sticker.png"
-              alt="Kasey the Koala operating the Service Switchboard"
+              alt="Ollie the Koala operating the Service Switchboard"
             />
           </span>
           <div className="bot-card-title">
@@ -734,7 +721,8 @@ export default function ServiceSwitchboard() {
           </nav>
           <div className="footer-contact-details">
             <span>Inclusive Strategies Census Engagement Manager</span>
-            <span>Central Victoria</span>
+            <span>Bendigo, Australia</span>
+            <span>US Citizen. Full Australian working rights.</span>
             <a href="mailto:Kasey.Robinson@abs.gov.au">Kasey.Robinson@abs.gov.au</a>
           </div>
         </div>

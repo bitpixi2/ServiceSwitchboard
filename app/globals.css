@@ -239,7 +239,7 @@ main {
   border-radius: 32px;
   box-shadow: var(--shadow);
   color: var(--white);
-  min-height: 560px;
+  min-height: 370px;
   overflow: hidden;
   padding: 30px 38px 38px;
   position: relative;
@@ -352,102 +352,6 @@ main {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 22px;
   font-weight: 500;
-}
-
-.route-line {
-  height: 78px;
-  margin: 0 auto;
-  position: relative;
-  width: 100%;
-}
-
-.route-line::before {
-  background: var(--mint);
-  content: "";
-  height: 32px;
-  left: calc(50% - 1px);
-  position: absolute;
-  top: 0;
-  width: 2px;
-}
-
-.route-line::after {
-  background: var(--mint);
-  content: "";
-  height: 2px;
-  left: 16.666%;
-  position: absolute;
-  top: 31px;
-  width: 66.668%;
-}
-
-.route-line i {
-  background: var(--mint);
-  bottom: 7px;
-  height: 40px;
-  position: absolute;
-  top: 31px;
-  transform: translateX(-50%);
-  width: 2px;
-  z-index: 2;
-}
-
-.route-line i::after {
-  background: var(--yellow);
-  border: 4px solid var(--ink);
-  border-radius: 50%;
-  bottom: -7px;
-  content: "";
-  height: 16px;
-  left: 50%;
-  position: absolute;
-  transform: translateX(-50%);
-  width: 16px;
-}
-
-.route-line i:first-child {
-  left: 16.666%;
-}
-
-.route-line i:nth-child(2) {
-  left: 50%;
-}
-
-.route-line i:nth-child(3) {
-  left: 83.334%;
-}
-
-.preview-destinations {
-  display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.preview-destinations span {
-  align-items: center;
-  aspect-ratio: 1.5;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  border-radius: 14px;
-  display: flex;
-  font-size: 11px;
-  font-weight: 800;
-  justify-content: center;
-  padding: 12px;
-  text-align: center;
-}
-
-.switchboard-preview > p {
-  bottom: 36px;
-  color: rgba(255, 255, 255, 0.66);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 16px;
-  font-style: italic;
-  left: 0;
-  margin: 0;
-  position: absolute;
-  text-align: center;
-  width: 100%;
 }
 
 .trust-strip {
@@ -1644,7 +1548,7 @@ footer span {
   }
 
   .switchboard-preview {
-    min-height: 490px;
+    min-height: 340px;
     padding: 24px 20px;
   }
 
@@ -1663,24 +1567,6 @@ footer span {
 
   .preview-source {
     padding: 15px;
-  }
-
-  .route-line {
-    height: 72px;
-  }
-
-  .switchboard-preview > p {
-    bottom: 26px;
-    font-size: 14px;
-  }
-
-  .preview-destinations {
-    gap: 6px;
-  }
-
-  .preview-destinations span {
-    font-size: 9px;
-    padding: 8px;
   }
 
   .trust-strip {
@@ -1901,7 +1787,6 @@ footer span {
 .kicker,
 .preview-guide-copy small,
 .preview-source span,
-.preview-destinations span,
 .trust-strip,
 .trust-strip span,
 .form-block legend > span,

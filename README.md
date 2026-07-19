@@ -1,7 +1,7 @@
 # IM2026 Service Switchboard
 
 <p align="center">
-  <img src="public/koala-switchboard-sticker.png" alt="Kasey the Koala operating the Service Switchboard" width="380">
+  <img src="public/koala-switchboard-sticker.png" alt="Ollie the Koala operating the Service Switchboard" width="380">
 </p>
 
 **A mobile-first career guide for finding where your skills could fit across the Australian Public Service.**
@@ -64,7 +64,7 @@ The response is returned as structured data so the interface can present a consi
 5. Review the suggested next steps and the questions that still need an agency or recruitment contact to answer.
 
 <p align="center">
-  <img src="public/koala-suitcase-sticker.png" alt="Kasey the Koala carrying a suitcase" width="250">
+  <img src="public/koala-suitcase-sticker.png" alt="Ollie the Koala carrying a suitcase" width="250">
   <img src="public/koala-coffee-chat-sticker.png" alt="Two koala colleagues talking over coffee" width="300">
 </p>
 
@@ -93,7 +93,7 @@ If I extended this bot, I would explore approved APIs for live job boards and pu
 I would not release that capability without authentication, rate limits, logging, allowlisted data sources and abuse monitoring. Bringing government roles, teams and contact details together could also make targeting or social engineering easier for hostile foreign actors. Authentication adds friction, so it is intentionally out of scope for this simple, low-friction demo.
 
 <p align="center">
-  <img src="public/koala-high-vis-ute-sticker.png" alt="Kasey the Koala in high-visibility workwear beside a ute" width="360">
+  <img src="public/koala-high-vis-ute-sticker.png" alt="Ollie the Koala with his paws in his high-vis vest pockets beside a ute" width="360">
 </p>
 
 ## Bot Card
@@ -137,7 +137,8 @@ I would not release that capability without authentication, rate limits, logging
 > Kasey Robinson<br>
 > Inclusive Strategies Census Engagement Manager<br>
 > Australian Bureau of Statistics<br>
-> Central Victoria<br>
+> Bendigo, Australia<br>
+> US Citizen. Full Australian working rights.<br>
 > Kasey.Robinson@abs.gov.au
 
 ## Information sources
