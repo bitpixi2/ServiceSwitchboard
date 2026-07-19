@@ -210,7 +210,7 @@ export default function ServiceSwitchboard() {
           </span>
         </a>
         <a className="quiet-link" href="#bot-card">
-          Bot Card
+          Go to Bot Card
         </a>
       </header>
 
@@ -720,16 +720,23 @@ export default function ServiceSwitchboard() {
         </div>
 
         <div className="footer-contact">
-          <strong>Created by Kasey Robinson</strong>
+          <strong>Kasey Robinson</strong>
           <nav aria-label="Kasey Robinson contact links">
-            <a href="https://github.com/bitpixi2" target="_blank" rel="noreferrer">
-              GitHub
-            </a>
             <a href="https://bitpixi.com" target="_blank" rel="noreferrer">
               Website
             </a>
-            <a href="mailto:kasey.pirate@gmail.com">Email</a>
+            <a href="https://linkedin.com/in/bitpixi" target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+            <a href="https://github.com/bitpixi2" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
           </nav>
+          <div className="footer-contact-details">
+            <span>Inclusive Strategies Census Engagement Manager</span>
+            <span>Central Victoria</span>
+            <a href="mailto:Kasey.Robinson@abs.gov.au">Kasey.Robinson@abs.gov.au</a>
+          </div>
         </div>
       </footer>
     </main>

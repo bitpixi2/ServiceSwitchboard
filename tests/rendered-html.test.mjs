@@ -34,11 +34,15 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.match(html, /Your switchboard to your next Australian Government job\./);
   assert.match(html, /Possible paths/);
   assert.match(html, /Build my career map/);
+  assert.match(html, /Go to Bot Card/);
   assert.match(html, /Bot card/);
   assert.match(html, /Hey I(?:&#x27;|&apos;|')m Kasey the Koala/);
   assert.match(html, /Kasey the Koala operating the Service Switchboard/);
   assert.match(html, /Acknowledgement of Country/);
+  assert.match(html, /linkedin\.com\/in\/bitpixi/);
   assert.match(html, /github\.com\/bitpixi2/);
+  assert.match(html, /Inclusive Strategies Census Engagement Manager/);
+  assert.match(html, /Kasey\.Robinson@abs\.gov\.au/);
   assert.match(html, /koala-suitcase-sticker\.png/);
   assert.match(html, /koala-colleague-sticker\.png/);
   assert.match(html, /koala-high-vis-ute-sticker\.png/);

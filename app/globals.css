@@ -1522,6 +1522,20 @@ footer span {
   text-underline-offset: 4px;
 }
 
+.footer-contact-details {
+  display: grid;
+  gap: 5px;
+  margin-top: 18px;
+}
+
+.footer-contact-details span {
+  line-height: 1.45;
+}
+
+.footer-contact-details a {
+  overflow-wrap: anywhere;
+}
+
 @media (max-width: 900px) {
   .hero {
     gap: 42px;
