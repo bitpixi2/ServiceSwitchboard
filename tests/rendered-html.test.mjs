@@ -34,7 +34,10 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.match(html, /Your switchboard to your next Australian Government job\./);
   assert.match(html, /Build my career map/);
   assert.match(html, /Bot card/);
-  assert.match(html, /Service Switchboard koala wearing a suit and round glasses/);
+  assert.match(html, /Hey I(?:&#x27;|&apos;|')m Kasey the Koala/);
+  assert.match(html, /Kasey the Koala operating the Service Switchboard/);
+  assert.match(html, /Acknowledgement of Country/);
+  assert.match(html, /github\.com\/bitpixi2/);
   assert.match(html, /Not an official recruitment/);
   assert.doesNotMatch(html, /Official structure in\. Cautious suggestions out\./);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/);

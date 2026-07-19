@@ -210,7 +210,7 @@ export default function ServiceSwitchboard() {
           </span>
         </a>
         <a className="quiet-link" href="#bot-card">
-          About this bot
+          Bot Card
         </a>
       </header>
 
@@ -237,13 +237,15 @@ export default function ServiceSwitchboard() {
           <div className="preview-guide">
             <span className="preview-guide-image">
               <img
-                src="/koala-switchboard-bot-simple.png"
-                alt="Friendly koala guide wearing a suit and round glasses"
+                src="/koala-switchboard-sticker.png"
+                alt="Kasey the Koala operating a colourful switchboard"
               />
             </span>
             <span className="preview-guide-copy">
               <small>Your guide</small>
-              <strong>Let&apos;s find work that fits your skills.</strong>
+              <strong>
+                Hey I&apos;m Kasey the Koala, your Service Switchboard bot!
+              </strong>
             </span>
           </div>
           <div className="preview-source">
@@ -625,8 +627,8 @@ export default function ServiceSwitchboard() {
         <div className="bot-card-intro">
           <span className="bot-card-mascot">
             <img
-              src="/koala-switchboard-bot-simple.png"
-              alt="Service Switchboard koala wearing a suit and round glasses"
+              src="/koala-switchboard-sticker.png"
+              alt="Kasey the Koala operating the Service Switchboard"
             />
           </span>
           <div className="bot-card-title">
@@ -666,12 +668,37 @@ export default function ServiceSwitchboard() {
       </section>
 
       <footer>
-        <strong>IM2026 Service Switchboard</strong>
-        <p>
-          An independent Innovation Month prototype. Not an official recruitment,
-          migration or security-clearance service.
-        </p>
-        <span>{agencies.length} organisations in the prototype catalogue</span>
+        <div className="footer-project">
+          <strong>IM2026 Service Switchboard</strong>
+          <p>
+            An independent Innovation Month prototype. Not an official recruitment,
+            migration or security-clearance service.
+          </p>
+          <span>{agencies.length} organisations in the prototype catalogue</span>
+        </div>
+
+        <div className="acknowledgement">
+          <strong>Acknowledgement of Country</strong>
+          <p>
+            We acknowledge the Traditional Owners and Custodians of Country
+            throughout Australia and recognise their continuing connection to
+            land, waters and communities. We pay our respects to Aboriginal and
+            Torres Strait Islander peoples, and to Elders past and present.
+          </p>
+        </div>
+
+        <div className="footer-contact">
+          <strong>Created by Kasey Robinson</strong>
+          <nav aria-label="Kasey Robinson contact links">
+            <a href="https://github.com/bitpixi2" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+            <a href="https://bitpixi.com" target="_blank" rel="noreferrer">
+              Website
+            </a>
+            <a href="mailto:kasey.pirate@gmail.com">Email</a>
+          </nav>
+        </div>
       </footer>
     </main>
   );
