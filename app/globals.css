@@ -239,9 +239,9 @@ main {
   border-radius: 32px;
   box-shadow: var(--shadow);
   color: var(--white);
-  min-height: 460px;
+  min-height: 560px;
   overflow: hidden;
-  padding: 38px;
+  padding: 30px 38px 38px;
   position: relative;
   transform: rotate(1.5deg);
 }
@@ -266,13 +266,60 @@ main {
   position: absolute;
 }
 
+.preview-guide {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  margin: 0 auto;
+  max-width: 350px;
+  position: relative;
+  z-index: 1;
+}
+
+.preview-guide-image {
+  background: var(--paper);
+  border: 4px solid var(--white);
+  border-radius: 24px;
+  flex: 0 0 112px;
+  height: 112px;
+  overflow: hidden;
+}
+
+.preview-guide-image img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.22);
+  width: 100%;
+}
+
+.preview-guide-copy {
+  display: grid;
+  gap: 7px;
+}
+
+.preview-guide-copy small {
+  color: var(--mint);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.preview-guide-copy strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
 .preview-source {
   background: var(--white);
   border-radius: 18px;
   color: var(--ink);
   display: grid;
   gap: 8px;
-  margin: 26px auto 0;
+  margin: 18px auto 0;
   max-width: 240px;
   padding: 20px;
   position: relative;
@@ -368,7 +415,7 @@ main {
 }
 
 .switchboard-preview > p {
-  bottom: 44px;
+  bottom: 36px;
   color: rgba(255, 255, 255, 0.66);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 16px;
@@ -1371,7 +1418,7 @@ footer span {
   .switchboard-preview {
     justify-self: center;
     max-width: 560px;
-    min-height: 420px;
+    min-height: 560px;
     transform: none;
     width: 100%;
   }
@@ -1452,8 +1499,35 @@ footer span {
   }
 
   .switchboard-preview {
-    min-height: 390px;
-    padding: 28px;
+    min-height: 490px;
+    padding: 24px 20px;
+  }
+
+  .preview-guide {
+    gap: 12px;
+  }
+
+  .preview-guide-image {
+    border-width: 3px;
+    flex-basis: 88px;
+    height: 88px;
+  }
+
+  .preview-guide-copy strong {
+    font-size: 15px;
+  }
+
+  .preview-source {
+    padding: 15px;
+  }
+
+  .route-line {
+    height: 72px;
+  }
+
+  .switchboard-preview > p {
+    bottom: 26px;
+    font-size: 14px;
   }
 
   .preview-destinations {

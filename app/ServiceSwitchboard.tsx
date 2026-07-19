@@ -234,6 +234,18 @@ export default function ServiceSwitchboard() {
         </div>
 
         <div className="switchboard-preview" aria-label="Example career map">
+          <div className="preview-guide">
+            <span className="preview-guide-image">
+              <img
+                src="/koala-switchboard-bot-simple.png"
+                alt="Friendly koala guide wearing a suit and round glasses"
+              />
+            </span>
+            <span className="preview-guide-copy">
+              <small>Your guide</small>
+              <strong>Let&apos;s find work that fits your skills.</strong>
+            </span>
+          </div>
           <div className="preview-source">
             <span>Your experience</span>
             <strong>Skills that can travel</strong>
