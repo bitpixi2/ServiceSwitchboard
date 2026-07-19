@@ -66,10 +66,11 @@ The response is returned as structured data so the interface can present a consi
 People can save their results as a clear two-page PDF for later. On supported phones, the bot opens the device's save and share options so the PDF can be stored in Files. The document includes the career summary, transferable skills, role families, organisations, practical next steps, recruiter question and limitations.
 
 <p align="center">
-  <img src="docs/service-switchboard-generated-pdf-page-1.png" alt="First page of a sample Service Switchboard PDF showing a career summary, transferable skills, role families and Australian Government organisations" width="760">
+  <img src="docs/service-switchboard-generated-pdf-page-1.png" alt="First page of a sample Service Switchboard PDF showing a career summary, transferable skills, role families and Australian Government organisations" width="48%">
+  <img src="docs/service-switchboard-generated-pdf-page-2.png" alt="Second page of a sample Service Switchboard PDF showing an organisation match, practical next steps, a recruiter question and limitations" width="48%">
 </p>
 
-<p align="center"><em>Example first page of an AI-generated Service Switchboard result. Each person's PDF reflects the information they enter.</em></p>
+<p align="center"><em>Example pages 1 and 2 of one AI-generated Service Switchboard result. Each person's PDF reflects the information they enter.</em></p>
 
 ## A quick judge walkthrough
 

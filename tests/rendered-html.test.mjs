@@ -179,6 +179,8 @@ test("llms.txt contains the complete README and contact details", async () => {
   assert.match(llms, /Codex Pro generative coding AI/);
   assert.match(llms, /OpenAI API with GPT-5\.6 Sol for the bot calls/);
   assert.doesNotMatch(llms, /Agency and careers links are a curated prototype snapshot/);
+  assert.match(llms, /docs\/service-switchboard-generated-pdf-page-1\.png/);
+  assert.match(llms, /docs\/service-switchboard-generated-pdf-page-2\.png/);
 });
 
 test("loading experience explains the wait and names each result section", async () => {
