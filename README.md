@@ -8,7 +8,7 @@
 
 [Try the Live Bot: switchboard.bitpixi.com](https://switchboard.bitpixi.com)
 
-IM2026 Service Switchboard helps current, non-ongoing and prospective public servants describe the work they can do—not just the job title they have now. Generative AI turns that information into role families, public missions, organisations to explore and practical next steps.
+IM2026 Service Switchboard helps current, non-ongoing and prospective public servants describe the work they can do, not just the job title they have now. Generative AI turns that information into role families, public missions, organisations to explore and practical next steps.
 
 This is an independent prototype for the Australian Government Innovation Month bot challenge in **The Complexity Tamer** category.
 
@@ -89,7 +89,7 @@ The response is returned as structured data so the interface can present a consi
 - Every result tells the user what must be checked with the agency or vacancy contact.
 - Input limits and structured output reduce misuse and unpredictable responses.
 
-## A useful next step—with a real trade-off
+## A useful next step with a real trade-off
 
 If I extended this bot, I would explore approved APIs for live job boards and public team-lead or recruitment contact details. That could turn a broad career path into a current vacancy or a useful person to contact, making the service more actionable for career switchers.
 
@@ -117,7 +117,7 @@ I would not release that capability without authentication, rate limits, logging
 ## Ready-to-send contest email
 
 **To:** InnovationMonth@finance.gov.au<br>
-**Subject:** IM2026 bot challenge entry — Service Switchboard
+**Subject:** IM2026 bot challenge entry: Service Switchboard
 
 > Hello Innovation Month team,
 >
