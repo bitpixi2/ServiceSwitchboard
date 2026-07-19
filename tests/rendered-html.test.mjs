@@ -177,7 +177,9 @@ test("loading experience explains the wait and names each result section", async
 
   assert.match(source, /This process takes approximately 1–2 minutes/);
   assert.match(source, /please keep this\s+tab open while we build your results/);
-  assert.doesNotMatch(source, /koala-switchboard-bot-simple\.png/);
+  assert.doesNotMatch(source, /className="loading-mascot"/);
+  assert.match(source, /koala-switchboard-bot-simple\.png/);
+  assert.equal(source.match(/koala-coffee-chat-sticker\.png/g)?.length, 1);
   assert.match(source, /role="progressbar"/);
   assert.match(source, /Role families to search/);
   assert.match(source, /Organisations worth investigating/);

@@ -887,8 +887,8 @@ export default function ServiceSwitchboard() {
 
           <div className="results-illustration">
             <img
-              src="/koala-coffee-chat-sticker.png"
-              alt="Two koala colleagues discussing career options over coffee"
+              src="/koala-switchboard-bot-simple.png"
+              alt="Service Switchboard koala waving"
             />
           </div>
 
