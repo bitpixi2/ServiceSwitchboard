@@ -181,6 +181,16 @@ test("llms.txt contains the complete README and contact details", async () => {
   assert.doesNotMatch(llms, /Agency and careers links are a curated prototype snapshot/);
   assert.match(llms, /docs\/service-switchboard-generated-pdf-page-1\.png/);
   assert.match(llms, /docs\/service-switchboard-generated-pdf-page-2\.png/);
+  assert.ok(
+    llms.indexOf("koala-high-vis-ute-sticker.png") <
+      llms.indexOf("## A useful next step with a real trade-off"),
+  );
+  assert.match(llms, /koala-high-vis-ute-sticker\.png[^>]+width="280"/);
+  assert.doesNotMatch(llms, /^\| \| \|$/m);
+  assert.match(llms, /I learned about the Build a Bureaucrat Bot initiative from an APS webinar\./);
+  assert.match(llms, /included Bot Card text\./);
+  assert.match(llms, /IM2026 Service Switchboard is an independent working prototype\./);
+  assert.match(llms, /It is not official business from the ABS nor the Census\./);
 });
 
 test("loading experience explains the wait and names each result section", async () => {

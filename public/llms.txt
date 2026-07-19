@@ -12,7 +12,7 @@
 
 IM2026 Service Switchboard helps current, non-ongoing and prospective public servants describe the work they can do, not just the job title they have now. Generative AI turns that information into role families, public missions, organisations to explore and practical next steps.
 
-This is an independent prototype for the Australian Government Innovation Month bot challenge in **The Complexity Tamer** category.
+This is an independent working prototype for the Australian Government Innovation Month bot challenge in **The Complexity Tamer** category.
 
 <p align="center">
   <img src="public/koala-switchboard-sticker.png" alt="Ollie the Koala operating the Service Switchboard" width="380">
@@ -106,15 +106,15 @@ People can save their results as a clear two-page PDF for later. On supported ph
 - Every result tells the user what must be checked with the agency or vacancy contact.
 - Input limits and structured output reduce misuse and unpredictable responses.
 
+<p align="center">
+  <img src="public/koala-high-vis-ute-sticker.png" alt="Ollie the Koala with his paws in his high-vis vest pockets beside a ute" width="280">
+</p>
+
 ## A useful next step with a real trade-off
 
 If I extended this bot, I would explore approved APIs for live job boards and public team-lead or recruitment contact details. That could turn a broad career path into a current vacancy or a useful person to contact, making the service more actionable for career switchers.
 
 I would not release that capability without authentication, rate limits, logging, allowlisted data sources and abuse monitoring. Bringing government roles, teams and contact details together could also make targeting or social engineering easier for hostile foreign actors. Authentication adds friction, so it is intentionally out of scope for this simple, low-friction demo.
-
-<p align="center">
-  <img src="public/koala-high-vis-ute-sticker.png" alt="Ollie the Koala with his paws in his high-vis vest pockets beside a ute" width="360">
-</p>
 
 ## Bot Card
 
@@ -122,20 +122,20 @@ I would not release that capability without authentication, rate limits, logging
   <img src="public/service-switchboard-bot-card.png" alt="IM2026 Service Switchboard Bot Card showing its purpose, intended users, information used, limitations, risks and tools used">
 </p>
 
-| | |
-|---|---|
-| **Purpose** | Help people see where their transferable skills could fit across the Australian Public Service. |
-| **Intended users** | Current, non-ongoing and prospective public servants, including career switchers. |
-| **Information used** | Skills and preferences entered by the user; the APS Job Family Framework; public organisation, citizenship and security-clearance guidance. |
-| **Limitations** | It does not search live vacancies, verify facts about a person or make recruitment, visa, citizenship or clearance decisions. |
-| **Risks** | Generative AI may overgeneralise experience, miss a suitable path or use information that has changed. Users must check current official advice. |
-| **Tools used** | Codex Pro, OpenAI API, Next.js, Lucide icons and curated Australian Government sources. |
+<table>
+  <tbody>
+    <tr><th scope="row">Purpose</th><td>Help people see where their transferable skills could fit across the Australian Public Service.</td></tr>
+    <tr><th scope="row">Intended users</th><td>Current, non-ongoing and prospective public servants, including career switchers.</td></tr>
+    <tr><th scope="row">Information used</th><td>Skills and preferences entered by the user; the APS Job Family Framework; public organisation, citizenship and security-clearance guidance.</td></tr>
+    <tr><th scope="row">Limitations</th><td>It does not search live vacancies, verify facts about a person or make recruitment, visa, citizenship or clearance decisions.</td></tr>
+    <tr><th scope="row">Risks</th><td>Generative AI may overgeneralise experience, miss a suitable path or use information that has changed. Users must check current official advice.</td></tr>
+    <tr><th scope="row">Tools used</th><td>Codex Pro, OpenAI API, Next.js, Lucide icons and curated Australian Government sources.</td></tr>
+  </tbody>
+</table>
 
 ## Contest entry submitted
 
-The Service Switchboard entry email has been sent to [InnovationMonth@finance.gov.au](mailto:InnovationMonth@finance.gov.au), the address listed for the IM2026 bot challenge.
-
-The submission included my acknowledgement that this bot is my work and disclosed the use of Codex Pro generative coding AI and the OpenAI API with GPT-5.6 Sol for the bot calls.
+The Service Switchboard entry email has been sent to [InnovationMonth@finance.gov.au](mailto:InnovationMonth@finance.gov.au), the address listed for the IM2026 bot challenge. I learned about the Build a Bureaucrat Bot initiative from an APS webinar. The submission included my acknowledgement that this bot is my work and disclosed the use of Codex Pro generative coding AI and the OpenAI API with GPT-5.6 Sol for the bot calls, and included Bot Card text.
 
 ## Information sources
 
@@ -150,4 +150,4 @@ The submission included my acknowledgement that this bot is my work and disclose
 
 ---
 
-IM2026 Service Switchboard is an independent prototype. It is not an official recruitment, migration or security-clearance service.
+IM2026 Service Switchboard is an independent working prototype. It is not an official recruitment, migration, or security-clearance service. It is not official business from the ABS nor the Census. I built it for the contest and in hopes to find a more permanent role on any APS technology or design team.
