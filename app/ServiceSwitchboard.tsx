@@ -281,14 +281,10 @@ export default function ServiceSwitchboard() {
               />
             </span>
             <span className="preview-guide-copy">
-              <strong>G’day! I’m Ollie, your Service Switchboard bot.</strong>
+              <strong>G’day! I’m your Service Switchboard bot.</strong>
             </span>
           </div>
         </div>
-      </section>
-
-      <section className="trust-strip" aria-label="Service principles">
-        <span>No account required.</span>
       </section>
 
       <section className="mapper-section" id="mapper">
@@ -737,7 +733,11 @@ export default function ServiceSwitchboard() {
             <a href="https://linkedin.com/in/bitpixi" target="_blank" rel="noreferrer">
               LinkedIn
             </a>
-            <a href="https://github.com/bitpixi2" target="_blank" rel="noreferrer">
+            <a
+              href="https://github.com/bitpixi2/ServiceSwitchboard"
+              target="_blank"
+              rel="noreferrer"
+            >
               GitHub
             </a>
           </nav>
@@ -752,10 +752,6 @@ export default function ServiceSwitchboard() {
             <span>US Citizen. Full Australian working rights.</span>
             <a href="mailto:Kasey.Robinson@abs.gov.au">Kasey.Robinson@abs.gov.au</a>
           </div>
-          <p className="footer-inspiration">
-            I did not obtain permission from ABS Comms or Media to use the Census
-            campaign character, so this prototype keeps the Service Switchboard title.
-          </p>
         </div>
       </footer>
     </main>

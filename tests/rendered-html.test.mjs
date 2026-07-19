@@ -45,12 +45,13 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.doesNotMatch(html, /Go to Bot Card/);
   assert.match(html, /service-switchboard-logo\.png/);
   assert.match(html, /Bot card/);
-  assert.match(html, /G’day! I’m Ollie/);
+  assert.match(html, /G’day! I’m your Service Switchboard bot\./);
+  assert.doesNotMatch(html, /G’day! I’m Ollie/);
   assert.doesNotMatch(html, /Your guide/);
   assert.match(html, /Ollie the Koala operating the Service Switchboard/);
   assert.match(html, /Acknowledgement of Country/);
   assert.match(html, /linkedin\.com\/in\/bitpixi/);
-  assert.match(html, /github\.com\/bitpixi2/);
+  assert.match(html, /github\.com\/bitpixi2\/ServiceSwitchboard/);
   assert.match(
     html,
     /Census Engagement Manager for Inclusive Strategies and Engagement in Central Victoria/,
@@ -70,11 +71,8 @@ test("server-renders the Service Switchboard MVP", async () => {
   );
   assert.doesNotMatch(html, /Sites hosting/);
   assert.doesNotMatch(html, /Skills that can travel/);
-  assert.match(html, /No account required\./);
-  assert.match(
-    html,
-    /I did not obtain permission from ABS Comms or Media to use the Census campaign character/,
-  );
+  assert.doesNotMatch(html, /No account required\./);
+  assert.doesNotMatch(html, /ABS Comms or Media|Census campaign character/);
   assert.doesNotMatch(html, /I chose him because I would like to join a technology team/);
   assert.doesNotMatch(html, /Ollie was inspired by the koala featured in/);
   assert.doesNotMatch(html, /census-media-hub\/census-tools-and-resources\/video/);

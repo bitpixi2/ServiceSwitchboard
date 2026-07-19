@@ -293,18 +293,6 @@ main {
   line-height: 1.25;
 }
 
-.trust-strip {
-  background: var(--teal);
-  color: var(--white);
-  display: flex;
-  font-size: 15px;
-  font-weight: 800;
-  justify-content: center;
-  letter-spacing: 0.01em;
-  padding: 18px max(24px, calc((100vw - 1172px) / 2));
-  text-align: center;
-}
-
 .mapper-section,
 .results-section,
 .sources-section,
@@ -1365,12 +1353,6 @@ footer span {
   overflow-wrap: anywhere;
 }
 
-.footer-inspiration {
-  border-top: 1px solid var(--line);
-  margin-top: 18px;
-  padding-top: 16px;
-}
-
 @media (max-width: 900px) {
   .hero {
     gap: 42px;
@@ -1444,7 +1426,7 @@ footer span {
   .hero {
     gap: 24px;
     min-height: auto;
-    padding: 22px 16px 54px;
+    padding: 0 16px 54px;
   }
 
   .hero::before {
@@ -1487,6 +1469,7 @@ footer span {
     background: transparent;
     box-shadow: none;
     justify-self: stretch;
+    margin-top: -6px;
     min-height: auto;
     order: -1;
     overflow: visible;
@@ -1517,14 +1500,6 @@ footer span {
 
   .preview-guide-copy strong {
     font-size: 16px;
-  }
-
-  .trust-strip {
-    padding: 15px 16px;
-  }
-
-  .trust-strip span {
-    font-size: 13px;
   }
 
   .mapper-section,
@@ -1725,8 +1700,6 @@ footer span {
 /* Keep supporting text readable on small screens and at normal browser zoom. */
 .brand small,
 .kicker,
-.trust-strip,
-.trust-strip span,
 .form-block legend > span,
 .category-mark,
 .map-source-node small,
