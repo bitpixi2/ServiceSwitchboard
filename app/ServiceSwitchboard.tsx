@@ -273,12 +273,7 @@ export default function ServiceSwitchboard() {
 
       <section className="mapper-section" id="mapper">
         <div className="section-heading">
-          <p className="kicker">Build your switchboard</p>
-          <h2>Start with the work—not a job title.</h2>
-          <p>
-            Pick up to eight areas. It is normal for your experience to cross
-            several categories.
-          </p>
+          <h2>Your switchboard to your next Australian Government job.</h2>
         </div>
 
         <form onSubmit={submit} className="mapper-form">
@@ -625,35 +620,6 @@ export default function ServiceSwitchboard() {
           </details>
         </section>
       )}
-
-      <section className="sources-section">
-        <div>
-          <p className="kicker">Built for trust</p>
-          <h2>Official structure in. Cautious suggestions out.</h2>
-        </div>
-        <div className="source-grid">
-          <a href="https://www.apsc.gov.au/initiatives-and-programs/aps-workforce-strategy-2025/workforce-planning-resources/aps-job-family-framework" target="_blank" rel="noreferrer">
-            <span>Job families</span>
-            <strong>APS Job Family Framework</strong>
-            <small>16 families, 51 functions and 229 roles</small>
-          </a>
-          <a href="https://www.directory.gov.au/reports/australian-government-organisations-register" target="_blank" rel="noreferrer">
-            <span>Organisations</span>
-            <strong>Government Organisations Register</strong>
-            <small>Portfolios, entities and public bodies</small>
-          </a>
-          <a href="https://www.apsc.gov.au/working-aps/hr-practitioners/recruitment-aps/onboarding/citizenship-aps" target="_blank" rel="noreferrer">
-            <span>Employment conditions</span>
-            <strong>APSC citizenship guidance</strong>
-            <small>Agency decisions must be confirmed</small>
-          </a>
-          <a href="https://www.agsva.gov.au/applicants/eligibility-suitability" target="_blank" rel="noreferrer">
-            <span>Clearances</span>
-            <strong>AGSVA eligibility guidance</strong>
-            <small>Clearance decisions are never made by this bot</small>
-          </a>
-        </div>
-      </section>
 
       <section className="bot-card-section" id="bot-card">
         <div className="bot-card-intro">

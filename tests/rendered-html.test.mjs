@@ -31,10 +31,12 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.match(html, /<title>IM2026 Service Switchboard<\/title>/i);
   assert.match(html, /See where you could serve Australia next\./);
   assert.match(html, /Show all 20 career areas/);
+  assert.match(html, /Your switchboard to your next Australian Government job\./);
   assert.match(html, /Build my career map/);
-  assert.match(html, /Official structure in\. Cautious suggestions out\./);
   assert.match(html, /Bot card/);
+  assert.match(html, /Service Switchboard koala wearing a suit and round glasses/);
   assert.match(html, /Not an official recruitment/);
+  assert.doesNotMatch(html, /Official structure in\. Cautious suggestions out\./);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/);
 });
 
