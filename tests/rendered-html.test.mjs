@@ -153,6 +153,10 @@ test("llms.txt contains the complete README and contact details", async () => {
   assert.match(llms, /## Contact/);
   assert.match(llms, /kasey\.robinson@abs\.gov\.au/);
   assert.doesNotMatch(llms, /Kasey\.Robinson@abs\.gov\.au/);
+  assert.match(llms, /## Contest entry submitted/);
+  assert.match(llms, /InnovationMonth@finance\.gov\.au/);
+  assert.match(llms, /entry email has been sent/);
+  assert.doesNotMatch(llms, /Ready-to-send contest email|Please accept my entry/);
   assert.match(llms, /github\.com\/bitpixi2\/ServiceSwitchboard/);
   assert.match(
     llms,

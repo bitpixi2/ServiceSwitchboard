@@ -114,38 +114,11 @@ I would not release that capability without authentication, rate limits, logging
 | **Risks** | Generative AI may overgeneralise experience, miss a suitable path or use information that has changed. Users must check current official advice. |
 | **Tools used** | Codex Pro, OpenAI API, Next.js, Lucide icons and curated Australian Government sources. |
 
-## Ready-to-send contest email
+## Contest entry submitted
 
-**To:** InnovationMonth@finance.gov.au<br>
-**Subject:** IM2026 bot challenge entry: Service Switchboard
+The Service Switchboard entry email has been sent to [InnovationMonth@finance.gov.au](mailto:InnovationMonth@finance.gov.au), the address listed for the IM2026 bot challenge.
 
-> Hello Innovation Month team,
->
-> Please accept my entry for the IM2026 bot challenge.
->
-> **Bot name:** IM2026 Service Switchboard<br>
-> **Category:** The Complexity Tamer<br>
-> **Bot link:** https://switchboard.bitpixi.com
->
-> **Short description:** IM2026 Service Switchboard is a mobile-first generative AI career guide. It helps current, non-ongoing and prospective public servants turn their skills and interests into APS role families, organisations to explore, useful search terms and practical next steps. It makes a large and unfamiliar system easier to navigate while clearly separating suggestions from decisions that must be confirmed with an agency.
->
-> **Bot Card**
->
-> - **Purpose:** Help people see where their transferable skills could fit across the Australian Public Service.
-> - **Intended users:** Current, non-ongoing and prospective public servants, including career switchers.
-> - **Information used:** User-entered skills and preferences, the APS Job Family Framework and public Australian Government information.
-> - **Limitations:** The bot does not search live vacancies or make recruitment, visa, citizenship or security-clearance decisions.
-> - **Risks:** Generative AI may miss a suitable path or use information that has changed. Users must check current official advice.
-> - **Tools used:** Codex Pro, OpenAI API, Next.js, Lucide icons and curated Australian Government sources.
->
-> **Acknowledgement:** I acknowledge that this bot is my work. I used Codex Pro generative coding AI to build the prototype and the OpenAI API with GPT-5.6 Sol for the bot calls, as disclosed in the Bot Card. I am responsible for this submission.
->
-> Kind regards,<br>
-> Kasey Robinson<br>
-> Census Engagement Manager for Inclusive Strategies and Engagement in Central Victoria<br>
-> [Australian Bureau of Statistics (ABS)](https://www.abs.gov.au/)<br>
-> US Citizen. Full Australian working rights.<br>
-> kasey.robinson@abs.gov.au
+The submission included my acknowledgement that this bot is my work and disclosed the use of Codex Pro generative coding AI and the OpenAI API with GPT-5.6 Sol for the bot calls.
 
 ## Information sources
 
