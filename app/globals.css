@@ -1608,9 +1608,11 @@ footer span {
 
   .hero-actions {
     align-items: stretch;
+    border-bottom: 1px solid var(--line);
     flex-direction: column;
     gap: 10px;
     margin-top: 24px;
+    padding-bottom: 24px;
   }
 
   .button {
@@ -1638,11 +1640,9 @@ footer span {
   }
 
   .preview-guide {
-    border-top: 1px solid var(--line);
     gap: 12px;
     justify-content: flex-start;
     max-width: none;
-    padding-top: 18px;
     width: 100%;
   }
 
