@@ -1669,6 +1669,29 @@ footer span {
     align-self: center;
   }
 
+  .summary-card > p {
+    font-size: 22px;
+    line-height: 1.45;
+  }
+
+  .pathway-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .pathway-column {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .pathway-column > header {
+    grid-column: 1 / -1;
+  }
+
+  .pathway-column .agency-card {
+    margin-top: 0;
+  }
+
   .bot-card-section {
     align-items: center;
     display: grid;

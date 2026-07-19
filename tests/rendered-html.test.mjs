@@ -212,8 +212,11 @@ test("loading experience explains the wait and names each result section", async
     readFile(new URL("../public/koala-switchboard-bot-simple.png", import.meta.url)),
   ]);
 
-  assert.match(source, /This process takes approximately 1–2 minutes/);
-  assert.match(source, /please keep this\s+tab open while we build your results/);
+  assert.match(source, /Results on the way!/);
+  assert.match(source, /This process takes ~1 minute/);
+  assert.match(source, /please keep this tab open while the\s+bot generates your results/);
+  assert.doesNotMatch(source, /Your results are on the way\./);
+  assert.doesNotMatch(source, /approximately 1–2 minutes/);
   assert.doesNotMatch(source, /className="loading-mascot"/);
   assert.match(source, /koala-switchboard-bot-simple\.png/);
   assert.equal(source.match(/koala-coffee-chat-sticker\.png/g)?.length, 1);
@@ -265,6 +268,14 @@ test("loading experience explains the wait and names each result section", async
   assert.match(
     styles,
     /@media \(min-width: 901px\)[\s\S]*?\.submit-row > p span\s*\{[^}]*display: block;/,
+  );
+  assert.match(
+    styles,
+    /@media \(min-width: 901px\)[\s\S]*?\.summary-card > p\s*\{[^}]*font-size: 22px;[^}]*line-height: 1\.45;/,
+  );
+  assert.match(
+    styles,
+    /@media \(min-width: 901px\)[\s\S]*?\.pathway-column\s*\{[^}]*grid-template-columns: repeat\(3, minmax\(0, 1fr\)\);/,
   );
   assert.match(
     styles,

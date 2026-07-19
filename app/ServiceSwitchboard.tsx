@@ -405,10 +405,10 @@ export default function ServiceSwitchboard() {
           >
             <div className="loading-content">
               <p className="kicker">Building your job switch</p>
-              <h2 id="loading-title">Your results are on the way.</h2>
+              <h2 id="loading-title">Results on the way!</h2>
               <p id="loading-description" className="loading-warning">
-                This process takes approximately 1–2 minutes, so please keep this
-                tab open while we build your results.
+                This process takes ~1 minute, so please keep this tab open while the
+                bot generates your results.
               </p>
 
               <div className="loading-now" aria-live="polite" aria-atomic="true">
