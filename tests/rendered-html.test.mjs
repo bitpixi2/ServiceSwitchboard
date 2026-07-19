@@ -218,6 +218,9 @@ test("generated results can be saved as a local PDF", async () => {
   assert.match(source, /createResultsPdf/);
   assert.match(source, /fetch\("\/koala-switchboard-sticker\.png"\)/);
   assert.match(pdfSource, /doc\.addImage\(data\.koalaImage, "PNG"/);
+  assert.doesNotMatch(pdfSource, /Check current official advice/);
+  assert.match(pdfSource, /ensureSpace\(24\);\s+y \+= 6;/);
+  assert.match(pdfSource, /doc\.line\(margin, y, margin \+ 12, y\);\s+y \+= 11;/);
   assert.match(styles, /@media print/);
   assert.match(styles, /main > :not\(\.results-section\)/);
   assert.match(styles, /\.save-pdf-button/);

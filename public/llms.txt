@@ -55,6 +55,16 @@ flowchart TD
 
 The response is returned as structured data so the interface can present a consistent, readable career map rather than a long block of chat text.
 
+## Example generated PDF
+
+People can save their results as a clear two-page PDF for later. On supported phones, the bot opens the device's save and share options so the PDF can be stored in Files. The document includes the career summary, transferable skills, role families, organisations, practical next steps, recruiter question and limitations.
+
+<p align="center">
+  <img src="docs/service-switchboard-generated-pdf-page-1.png" alt="First page of a sample Service Switchboard PDF showing a career summary, transferable skills, role families and Australian Government organisations" width="760">
+</p>
+
+<p align="center"><em>Example first page of an AI-generated Service Switchboard result. Each person's PDF reflects the information they enter.</em></p>
+
 ## A quick judge walkthrough
 
 1. Open the [live bot](https://switchboard.bitpixi.com) on a phone or desktop.

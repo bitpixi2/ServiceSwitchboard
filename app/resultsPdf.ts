@@ -93,12 +93,12 @@ export function createResultsPdf(data: ResultsPdfData) {
   };
 
   const addSectionHeading = (title: string) => {
-    ensureSpace(18);
-    y += 3;
+    ensureSpace(24);
+    y += 6;
     doc.setDrawColor(...TEAL);
     doc.setLineWidth(0.7);
     doc.line(margin, y, margin + 12, y);
-    y += 7;
+    y += 11;
     writeText(title, { fontSize: 15, style: "bold", colour: TEAL, gapAfter: 5 });
   };
 
@@ -238,7 +238,7 @@ export function createResultsPdf(data: ResultsPdfData) {
     doc.setFont("helvetica", "normal");
     doc.setFontSize(8);
     doc.setTextColor(...MUTED);
-    doc.text("switchboard.bitpixi.com | Check current official advice", margin, pageHeight - 9);
+    doc.text("switchboard.bitpixi.com", margin, pageHeight - 9);
     doc.text(`Page ${pageNumber} of ${totalPages}`, pageWidth - margin, pageHeight - 9, {
       align: "right",
     });
