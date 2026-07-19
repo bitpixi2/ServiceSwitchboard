@@ -355,16 +355,16 @@ main {
 }
 
 .route-line {
-  height: 92px;
+  height: 78px;
   margin: 0 auto;
   position: relative;
-  width: 84%;
+  width: 100%;
 }
 
 .route-line::before {
   background: var(--mint);
   content: "";
-  height: 54px;
+  height: 32px;
   left: calc(50% - 1px);
   position: absolute;
   top: 0;
@@ -372,39 +372,49 @@ main {
 }
 
 .route-line::after {
-  border-left: 2px solid var(--mint);
-  border-right: 2px solid var(--mint);
-  border-top: 2px solid var(--mint);
-  border-radius: 18px 18px 0 0;
-  bottom: 0;
+  background: var(--mint);
   content: "";
-  height: 38px;
-  left: 4%;
+  height: 2px;
+  left: 16.666%;
   position: absolute;
-  width: 92%;
+  top: 31px;
+  width: 66.668%;
 }
 
 .route-line i {
-  background: var(--yellow);
-  border: 5px solid var(--ink);
-  border-radius: 50%;
-  bottom: -8px;
-  height: 18px;
+  background: var(--mint);
+  bottom: 7px;
+  height: 40px;
   position: absolute;
-  width: 18px;
+  top: 31px;
+  transform: translateX(-50%);
+  width: 2px;
   z-index: 2;
 }
 
+.route-line i::after {
+  background: var(--yellow);
+  border: 4px solid var(--ink);
+  border-radius: 50%;
+  bottom: -7px;
+  content: "";
+  height: 16px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 16px;
+}
+
 .route-line i:first-child {
-  left: 1%;
+  left: 16.666%;
 }
 
 .route-line i:nth-child(2) {
-  left: calc(50% - 9px);
+  left: 50%;
 }
 
 .route-line i:nth-child(3) {
-  right: 1%;
+  left: 83.334%;
 }
 
 .preview-destinations {
@@ -470,6 +480,20 @@ main {
 .mapper-section {
   padding-bottom: 110px;
   padding-top: 110px;
+}
+
+.mapper-intro {
+  align-items: center;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: minmax(0, 1fr) 260px;
+}
+
+.section-sticker {
+  display: block;
+  height: auto;
+  justify-self: end;
+  width: 250px;
 }
 
 .section-heading {
@@ -676,6 +700,31 @@ main {
   font-size: 11px;
   justify-content: space-between;
   margin-top: 9px;
+}
+
+.form-illustration-layout {
+  align-items: end;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  margin-top: 12px;
+}
+
+.form-sticker {
+  display: block;
+  height: auto;
+  justify-self: center;
+  max-height: 260px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.details-layout {
+  grid-template-columns: minmax(0, 1fr) 300px;
+}
+
+.high-vis-sticker {
+  max-height: 250px;
 }
 
 .details-grid {
@@ -967,6 +1016,19 @@ main {
 .agency-match-section,
 .action-section {
   margin-top: 86px;
+}
+
+.results-illustration {
+  display: flex;
+  justify-content: center;
+  margin: 34px auto -8px;
+}
+
+.results-illustration img {
+  display: block;
+  height: auto;
+  max-width: 360px;
+  width: 52%;
 }
 
 .subheading {
@@ -1486,6 +1548,18 @@ footer span {
     grid-template-columns: 1fr;
   }
 
+  .mapper-intro {
+    grid-template-columns: minmax(0, 1fr) 210px;
+  }
+
+  .section-sticker {
+    width: 210px;
+  }
+
+  .details-layout {
+    grid-template-columns: minmax(0, 1fr) 240px;
+  }
+
   .skill-list {
     justify-content: flex-start;
   }
@@ -1621,6 +1695,33 @@ footer span {
   .bot-card-section {
     padding-left: 16px;
     padding-right: 16px;
+  }
+
+  .mapper-intro,
+  .form-illustration-layout,
+  .details-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .section-sticker {
+    justify-self: center;
+    margin-top: -20px;
+    width: min(240px, 68vw);
+  }
+
+  .form-sticker {
+    max-height: 220px;
+    max-width: 250px;
+  }
+
+  .high-vis-sticker {
+    max-height: 210px;
+    max-width: 310px;
+  }
+
+  .results-illustration img {
+    max-width: 300px;
+    width: 86%;
   }
 
   .mapper-section,

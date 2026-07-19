@@ -32,12 +32,16 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.match(html, /See where you could serve Australia next\./);
   assert.match(html, /Show all 20 career areas/);
   assert.match(html, /Your switchboard to your next Australian Government job\./);
+  assert.match(html, /Possible paths/);
   assert.match(html, /Build my career map/);
   assert.match(html, /Bot card/);
   assert.match(html, /Hey I(?:&#x27;|&apos;|')m Kasey the Koala/);
   assert.match(html, /Kasey the Koala operating the Service Switchboard/);
   assert.match(html, /Acknowledgement of Country/);
   assert.match(html, /github\.com\/bitpixi2/);
+  assert.match(html, /koala-suitcase-sticker\.png/);
+  assert.match(html, /koala-colleague-sticker\.png/);
+  assert.match(html, /koala-high-vis-ute-sticker\.png/);
   assert.match(html, /Not an official recruitment/);
   assert.doesNotMatch(html, /Official structure in\. Cautious suggestions out\./);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/);
