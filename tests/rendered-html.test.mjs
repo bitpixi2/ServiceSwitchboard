@@ -44,6 +44,7 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.doesNotMatch(html, /Your switchboard to your next Australian Government job\./);
   assert.equal(html.match(/Build my job switch/g)?.length, 2);
   assert.doesNotMatch(html, /Build my map|Build my career map/);
+  assert.doesNotMatch(html, /[↘↗→]/);
   assert.doesNotMatch(html, /Go to Bot Card/);
   assert.match(html, /brand-signal/);
   assert.doesNotMatch(html, /service-switchboard-logo\.png/);
@@ -128,6 +129,9 @@ test("loading experience explains the wait and names each result section", async
   assert.match(source, /Globe2 aria-hidden="true"/);
   assert.match(source, /function LinkedInMark/);
   assert.match(source, /function GitHubMark/);
+  assert.match(source, /ArrowDownRight/);
+  assert.match(source, /ExternalLink/);
+  assert.doesNotMatch(source, /[↘↗→]/);
 });
 
 test("AI endpoint fails safely when the server key is absent", async () => {

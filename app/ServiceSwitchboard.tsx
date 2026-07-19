@@ -3,11 +3,13 @@
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 import {
+  ArrowDownRight,
   BadgeDollarSign,
   BriefcaseBusiness,
   ClipboardCheck,
   Cpu,
   Database,
+  ExternalLink,
   FlaskConical,
   FolderSearch,
   Gavel,
@@ -156,7 +158,7 @@ const botCardAlt =
   "IM2026 Service Switchboard Bot Card. Purpose: Show where transferable skills may fit across Australian public services. Intended users: Current, non-ongoing and prospective public servants. Information used: User-entered skills and preferences, official job-family and public agency information. Limitations: No live vacancies. No recruitment, visa, citizenship or clearance decisions. Risks: AI may miss a path or use outdated information. Check official advice. Tools used: Codex Pro, OpenAI API, Next.js, Lucide icons and curated Australian Government sources. switchboard.bitpixi.com by Kasey Robinson, ABS.";
 
 function Chevron() {
-  return <span aria-hidden="true">↘</span>;
+  return <ArrowDownRight aria-hidden="true" strokeWidth={2.2} />;
 }
 
 function GitHubMark() {
@@ -653,9 +655,12 @@ export default function ServiceSwitchboard() {
             <div className="role-nodes">
               {map.roleMatches.map((role, index) => {
                 const category = categoryById[role.categoryId];
+                const RoleIcon = categoryIcons[role.categoryId] ?? BriefcaseBusiness;
                 return (
                   <article key={`${role.categoryId}-${index}`} style={{ "--delay": `${index * 90}ms` } as CSSProperties}>
-                    <span>{category?.mark ?? "→"}</span>
+                    <span aria-hidden="true">
+                      <RoleIcon strokeWidth={2.2} />
+                    </span>
                     <strong>{category?.shortLabel ?? role.categoryId}</strong>
                   </article>
                 );
@@ -686,10 +691,13 @@ export default function ServiceSwitchboard() {
             <div className="role-match-grid">
               {map.roleMatches.map((role) => {
                 const category = categoryById[role.categoryId];
+                const RoleIcon = categoryIcons[role.categoryId] ?? BriefcaseBusiness;
                 return (
                   <article className="role-match-card" key={role.categoryId}>
                     <div className="role-card-top">
-                      <span>{category?.mark ?? "→"}</span>
+                      <span aria-hidden="true">
+                        <RoleIcon strokeWidth={2.2} />
+                      </span>
                       <h4>{category?.label ?? role.categoryId}</h4>
                     </div>
                     <p>{role.fit}</p>
@@ -744,7 +752,7 @@ export default function ServiceSwitchboard() {
                             </details>
                           )}
                           <a href={agency.url} target="_blank" rel="noreferrer">
-                            Visit official careers page <span aria-hidden="true">↗</span>
+                            Visit official careers page <ExternalLink aria-hidden="true" />
                           </a>
                         </article>
                       );
@@ -770,7 +778,7 @@ export default function ServiceSwitchboard() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Search APSJobs <span aria-hidden="true">↗</span>
+                Search APSJobs <ExternalLink aria-hidden="true" />
               </a>
             </div>
             <div className="message-card">
