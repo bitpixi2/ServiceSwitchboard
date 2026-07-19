@@ -139,6 +139,7 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.doesNotMatch(html, /census-media-hub\/census-tools-and-resources\/video/);
   assert.doesNotMatch(html, /certification-statement-2026-census-campaign/);
   assert.doesNotMatch(html, /One profile\. More than one possible path\./);
+  assert.doesNotMatch(html, /More than one path fits\./);
   assert.doesNotMatch(html, /Official structure in\. Cautious suggestions out\./);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/);
 });
@@ -176,7 +177,7 @@ test("loading experience explains the wait and names each result section", async
 
   assert.match(source, /This process takes approximately 1–2 minutes/);
   assert.match(source, /please keep this\s+tab open while we build your results/);
-  assert.match(source, /koala-switchboard-bot-simple\.png/);
+  assert.doesNotMatch(source, /koala-switchboard-bot-simple\.png/);
   assert.match(source, /role="progressbar"/);
   assert.match(source, /Role families to search/);
   assert.match(source, /Organisations worth investigating/);
@@ -200,17 +201,25 @@ test("loading experience explains the wait and names each result section", async
 });
 
 test("generated results can be saved as a local PDF", async () => {
-  const [source, styles] = await Promise.all([
+  const [source, styles, pdfSource] = await Promise.all([
     readFile(new URL("../app/ServiceSwitchboard.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+    readFile(new URL("../app/resultsPdf.ts", import.meta.url), "utf8"),
   ]);
 
   assert.match(source, /FileDown/);
   assert.match(source, /Save results as PDF/);
-  assert.match(source, /window\.print\(\)/);
+  assert.match(source, /navigator\.canShare/);
+  assert.match(source, /navigator\.share/);
+  assert.match(source, /new File\(\[blob\], filename/);
+  assert.match(source, /downloadLink\.download = filename/);
+  assert.match(source, /createResultsPdf/);
+  assert.match(source, /fetch\("\/koala-switchboard-sticker\.png"\)/);
+  assert.match(pdfSource, /doc\.addImage\(data\.koalaImage, "PNG"/);
   assert.match(styles, /@media print/);
   assert.match(styles, /main > :not\(\.results-section\)/);
   assert.match(styles, /\.save-pdf-button/);
+  assert.match(styles, /\.footer-contact nav a\s*\{[^}]*align-items: flex-end;/s);
 });
 
 test("AI endpoint fails safely when the server key is absent", async () => {

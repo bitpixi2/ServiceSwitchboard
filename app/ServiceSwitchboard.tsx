@@ -193,6 +193,8 @@ export default function ServiceSwitchboard() {
   const [loadingProgress, setLoadingProgress] = useState(8);
   const [loadingStage, setLoadingStage] = useState(0);
   const [copied, setCopied] = useState(false);
+  const [pdfSaving, setPdfSaving] = useState(false);
+  const [pdfStatus, setPdfStatus] = useState<string | null>(null);
   const resultsRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -320,9 +322,74 @@ export default function ServiceSwitchboard() {
     setCopied(true);
   }
 
-  function saveResultsAsPdf() {
-    if (!map) return;
-    window.print();
+  async function saveResultsAsPdf() {
+    if (!map || pdfSaving) return;
+    setPdfSaving(true);
+    setPdfStatus("Preparing your PDF file...");
+
+    try {
+      const { createResultsPdf } = await import("./resultsPdf");
+      const koalaResponse = await fetch("/koala-switchboard-sticker.png");
+      if (!koalaResponse.ok) throw new Error("Koala artwork could not be loaded.");
+      const koalaImage = new Uint8Array(await koalaResponse.arrayBuffer());
+      const { blob, filename } = createResultsPdf({
+        koalaImage,
+        generatedAt,
+        summary: map.summary,
+        skills: map.skillSignals,
+        roles: map.roleMatches.map((role) => ({
+          name: categoryById[role.categoryId]?.label ?? role.categoryId,
+          fit: role.fit,
+          searchTerms: role.searchTerms,
+        })),
+        agencies: map.agencyMatches.map((match) => ({
+          name: agencyById[match.agencyId]?.name ?? match.agencyId,
+          portfolio: agencyById[match.agencyId]?.portfolio ?? "Australian Government",
+          reason: match.reason,
+          pathway: pathwayMeta[match.pathway].label,
+          questions: match.questions,
+          url: agencyById[match.agencyId]?.url ?? "https://www.apsjobs.gov.au/s/",
+        })),
+        nextSteps: map.nextSteps,
+        recruiterMessage: map.recruiterMessage,
+        limitations: map.limitations,
+      });
+
+      const file = new File([blob], filename, { type: "application/pdf" });
+      const shareData = {
+        files: [file],
+        title: "Service Switchboard results",
+        text: "My Service Switchboard career results",
+      };
+
+      if (navigator.share && navigator.canShare?.(shareData)) {
+        try {
+          await navigator.share(shareData);
+          setPdfStatus("Your PDF is ready in your device's save and share options.");
+          return;
+        } catch (shareError) {
+          if (shareError instanceof DOMException && shareError.name === "AbortError") {
+            setPdfStatus("PDF save cancelled.");
+            return;
+          }
+        }
+      }
+
+      const downloadUrl = URL.createObjectURL(blob);
+      const downloadLink = document.createElement("a");
+      downloadLink.href = downloadUrl;
+      downloadLink.download = filename;
+      downloadLink.rel = "noopener";
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      downloadLink.remove();
+      window.setTimeout(() => URL.revokeObjectURL(downloadUrl), 60_000);
+      setPdfStatus("Your PDF has been downloaded to this device.");
+    } catch {
+      setPdfStatus("We could not create the PDF. Please try again.");
+    } finally {
+      setPdfSaving(false);
+    }
   }
 
   return (
@@ -336,9 +403,6 @@ export default function ServiceSwitchboard() {
             aria-labelledby="loading-title"
             aria-describedby="loading-description"
           >
-            <div className="loading-mascot" aria-hidden="true">
-              <img src="/koala-switchboard-bot-simple.png" alt="" />
-            </div>
             <div className="loading-content">
               <p className="kicker">Building your job switch</p>
               <h2 id="loading-title">Your results are on the way.</h2>
@@ -645,7 +709,7 @@ export default function ServiceSwitchboard() {
           <div className="results-heading">
             <div>
               <p className="kicker">Your service switchboard</p>
-              <h2 id="results-title">More than one path fits.</h2>
+              <h2 id="results-title">More than one path</h2>
             </div>
             <div className="results-tools">
               <span className="generated-time">
@@ -655,11 +719,15 @@ export default function ServiceSwitchboard() {
                 className="save-pdf-button"
                 type="button"
                 onClick={saveResultsAsPdf}
-                title="Opens your device's print or PDF options"
+                disabled={pdfSaving}
+                title="Creates a PDF file you can save to Files or Downloads"
               >
                 <FileDown aria-hidden="true" strokeWidth={2.2} />
-                Save results as PDF
+                {pdfSaving ? "Preparing PDF..." : "Save results as PDF"}
               </button>
+              <span className="pdf-status" aria-live="polite">
+                {pdfStatus}
+              </span>
             </div>
           </div>
 
