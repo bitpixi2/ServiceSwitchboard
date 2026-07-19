@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function render(path = "/") {
@@ -80,6 +81,18 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.doesNotMatch(html, /One profile\. More than one possible path\./);
   assert.doesNotMatch(html, /Official structure in\. Cautious suggestions out\./);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/);
+});
+
+test("llms.txt contains the complete README and contact details", async () => {
+  const [readme, llms] = await Promise.all([
+    readFile(new URL("../README.md", import.meta.url), "utf8"),
+    readFile(new URL("../public/llms.txt", import.meta.url), "utf8"),
+  ]);
+
+  assert.equal(llms, readme);
+  assert.match(llms, /## Contact/);
+  assert.match(llms, /Kasey\.Robinson@abs\.gov\.au/);
+  assert.match(llms, /github\.com\/bitpixi2\/ServiceSwitchboard/);
 });
 
 test("AI endpoint fails safely when the server key is absent", async () => {
