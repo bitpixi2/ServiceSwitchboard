@@ -54,6 +54,10 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.match(html, /This site does not store your data/);
   assert.match(html, /sent briefly to an AI\s+service in the cloud to create your results/);
   assert.match(html, /protected, classified or very personal information/);
+  assert.ok(
+    html.indexOf('class="character-count"') < html.indexOf('class="privacy-note"'),
+    "character count should appear before the privacy note",
+  );
   assert.doesNotMatch(html, /What have you done—and what do you want more of\?/);
   assert.match(html, /Trades, facilities and logistics/);
   assert.doesNotMatch(html, /Show all 20 career areas|Show fewer areas/);
@@ -161,6 +165,8 @@ test("loading experience explains the wait and names each result section", async
   assert.match(source, /interests: \["technology", "design", "data", "cyber", "field"\]/);
   assert.match(styles, /\.hero-actions\s*\{[^}]*border-bottom: 1px solid var\(--line\)/s);
   assert.doesNotMatch(styles, /\.preview-guide\s*\{[^}]*border-top:/s);
+  assert.match(styles, /\.privacy-note,[\s\S]*?font-style: italic;/);
+  assert.match(styles, /\.character-count\s*\{[^}]*font-style: normal;/s);
 });
 
 test("generated results can be saved as a local PDF", async () => {

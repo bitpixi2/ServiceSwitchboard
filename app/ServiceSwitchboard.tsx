@@ -503,12 +503,12 @@ export default function ServiceSwitchboard() {
                   />
                 </label>
                 <div className="story-foot">
-                  <span>
+                  <span className="character-count">{form.story.length}/1600</span>
+                  <span className="privacy-note">
                     This site does not store your data, but it is sent briefly to an AI
                     service in the cloud to create your results. Please do not enter
                     protected, classified or very personal information.
                   </span>
-                  <span>{form.story.length}/1600</span>
                 </div>
               </div>
               <img

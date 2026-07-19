@@ -549,10 +549,26 @@ main {
 
 .story-foot {
   color: var(--muted);
-  display: flex;
+  display: grid;
   font-size: 11px;
-  justify-content: space-between;
+  gap: 6px;
   margin-top: 9px;
+}
+
+.character-count {
+  font-style: normal;
+  justify-self: end;
+}
+
+.privacy-note,
+.detail-note,
+.submit-row > p,
+.loading-warning {
+  font-style: italic;
+}
+
+.privacy-note {
+  line-height: 1.55;
 }
 
 .form-illustration-layout {
@@ -1795,9 +1811,7 @@ footer span {
   }
 
   .story-foot {
-    align-items: flex-end;
-    flex-direction: column;
-    gap: 4px;
+    gap: 6px;
   }
 
   .submit-row {
