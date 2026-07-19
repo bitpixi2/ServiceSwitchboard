@@ -396,7 +396,6 @@ export default function ServiceSwitchboard() {
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <p className="kicker">Your skills can travel</p>
           <h1>Find your next public service role.</h1>
 
           <div

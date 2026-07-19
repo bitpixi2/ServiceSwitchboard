@@ -99,7 +99,7 @@ test("server-renders the Service Switchboard MVP", async () => {
     /Codex Pro, OpenAI API, Next\.js, Lucide icons and curated Australian Government sources\./,
   );
   assert.doesNotMatch(html, /Sites hosting/);
-  assert.doesNotMatch(html, /Skills that can travel/);
+  assert.doesNotMatch(html, /Your skills can travel|Skills that can travel/);
   assert.doesNotMatch(html, /No account required\./);
   assert.doesNotMatch(html, /ABS Comms or Media|Census campaign character/);
   assert.doesNotMatch(html, /I chose him because I would like to join a technology team/);

@@ -140,15 +140,10 @@ main {
   column-gap: 60px;
   display: grid;
   grid-template-areas:
-    "kicker guide"
     "title guide"
     "lede guide"
     "actions guide";
   grid-template-columns: minmax(0, 1.05fr) minmax(380px, 0.95fr);
-}
-
-.hero-copy > .kicker {
-  grid-area: kicker;
 }
 
 .hero-copy > h1 {
@@ -1519,7 +1514,6 @@ footer span {
 
   .hero-copy {
     grid-template-areas:
-      "kicker"
       "title"
       "guide"
       "lede"
