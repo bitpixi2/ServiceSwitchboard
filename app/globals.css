@@ -1108,8 +1108,8 @@ main {
 .results-illustration img {
   display: block;
   height: auto;
-  max-width: 360px;
-  width: 52%;
+  max-width: 330px;
+  width: 48%;
 }
 
 .subheading {
@@ -1902,8 +1902,8 @@ footer span {
   }
 
   .results-illustration img {
-    max-width: 300px;
-    width: 86%;
+    max-width: 270px;
+    width: 78%;
   }
 
   .mapper-section {

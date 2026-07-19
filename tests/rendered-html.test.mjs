@@ -212,7 +212,8 @@ test("loading experience explains the wait and names each result section", async
     readFile(new URL("../public/koala-switchboard-bot-simple.png", import.meta.url)),
   ]);
 
-  assert.match(source, /Results on the way!/);
+  assert.match(source, /Results on the Way/);
+  assert.doesNotMatch(source, /Results on the way!/);
   assert.match(source, /We could not flip the switches yet\./);
   assert.doesNotMatch(source, /We could not build the map yet\./);
   assert.match(source, /This process takes ~1 minute/);
@@ -243,6 +244,14 @@ test("loading experience explains the wait and names each result section", async
   assert.match(styles, /\.coffee-sticker\s*\{[^}]*height: min\(220px, 64vw\);/s);
   assert.match(styles, /\.ute-sticker\s*\{[^}]*width: 280px;/s);
   assert.match(styles, /\.ute-sticker\s*\{[^}]*width: min\(210px, 62vw\);/s);
+  assert.match(
+    styles,
+    /\.results-illustration img\s*\{[^}]*max-width: 330px;[^}]*width: 48%;/s,
+  );
+  assert.match(
+    styles,
+    /\.results-illustration img\s*\{[^}]*max-width: 270px;[^}]*width: 78%;/s,
+  );
   assert.match(styles, /\.hero h1 > span\s*\{[^}]*white-space: nowrap;/s);
   assert.match(styles, /@keyframes submit-shimmer/);
   assert.match(
@@ -310,6 +319,8 @@ test("generated results can be saved as a local PDF", async () => {
   assert.match(source, /Save results as PDF/);
   assert.match(source, /navigator\.canShare/);
   assert.match(source, /navigator\.share/);
+  assert.match(source, /const isMobileDevice =/);
+  assert.match(source, /if \(isMobileDevice && navigator\.share/);
   assert.match(source, /new File\(\[blob\], filename/);
   assert.match(source, /downloadLink\.download = filename/);
   assert.match(source, /createResultsPdf/);

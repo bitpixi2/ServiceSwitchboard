@@ -361,8 +361,11 @@ export default function ServiceSwitchboard() {
         title: "Service Switchboard results",
         text: "My Service Switchboard career results",
       };
+      const isMobileDevice =
+        /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) ||
+        (navigator.maxTouchPoints > 1 && window.matchMedia("(max-width: 900px)").matches);
 
-      if (navigator.share && navigator.canShare?.(shareData)) {
+      if (isMobileDevice && navigator.share && navigator.canShare?.(shareData)) {
         try {
           await navigator.share(shareData);
           setPdfStatus("Your PDF is ready in your device's save and share options.");
@@ -405,7 +408,7 @@ export default function ServiceSwitchboard() {
           >
             <div className="loading-content">
               <p className="kicker">Building your job switch</p>
-              <h2 id="loading-title">Results on the way!</h2>
+              <h2 id="loading-title">Results on the Way</h2>
               <p id="loading-description" className="loading-warning">
                 This process takes ~1 minute, so please keep this tab open while the
                 bot generates your results.
