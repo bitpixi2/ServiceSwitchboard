@@ -101,6 +101,10 @@ I would not release that capability without authentication, rate limits, logging
 
 ## Bot Card
 
+<p align="center">
+  <img src="public/service-switchboard-bot-card.png" alt="IM2026 Service Switchboard Bot Card showing its purpose, intended users, information used, limitations, risks and tools used">
+</p>
+
 | | |
 |---|---|
 | **Purpose** | Help people see where their transferable skills could fit across the Australian Public Service. |
@@ -108,7 +112,7 @@ I would not release that capability without authentication, rate limits, logging
 | **Information used** | Skills and preferences entered by the user; the APS Job Family Framework; public organisation, citizenship and security-clearance guidance. |
 | **Limitations** | It does not search live vacancies, verify facts about a person or make recruitment, visa, citizenship or clearance decisions. |
 | **Risks** | Generative AI may overgeneralise experience, miss a suitable path or use information that has changed. Users must check current official advice. |
-| **Tools used** | Codex Pro, OpenAI API, Next.js, Lucide icons, curated Australian Government sources and Sites hosting. |
+| **Tools used** | Codex Pro, OpenAI API, Next.js, Lucide icons and curated Australian Government sources. |
 
 ## Ready-to-send contest email
 
@@ -132,7 +136,7 @@ I would not release that capability without authentication, rate limits, logging
 > - **Information used:** User-entered skills and preferences, the APS Job Family Framework and public Australian Government information.
 > - **Limitations:** The bot does not search live vacancies or make recruitment, visa, citizenship or security-clearance decisions.
 > - **Risks:** Generative AI may miss a suitable path or use information that has changed. Users must check current official advice.
-> - **Tools used:** Codex Pro, OpenAI API, Next.js, Lucide icons, curated Australian Government sources and Sites hosting.
+> - **Tools used:** Codex Pro, OpenAI API, Next.js, Lucide icons and curated Australian Government sources.
 >
 > **Acknowledgement:** I acknowledge that this bot is my work. I used generative AI and coding assistance to build the prototype, as disclosed in the Bot Card, and I am responsible for this submission.
 >

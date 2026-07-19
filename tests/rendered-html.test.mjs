@@ -42,7 +42,8 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.doesNotMatch(html, /Show all 20 career areas|Show fewer areas/);
   assert.doesNotMatch(html, /Your switchboard to your next Australian Government job\./);
   assert.match(html, /Build my career map/);
-  assert.match(html, /Go to Bot Card/);
+  assert.doesNotMatch(html, /Go to Bot Card/);
+  assert.match(html, /service-switchboard-logo\.png/);
   assert.match(html, /Bot card/);
   assert.match(html, /G’day! I’m Ollie/);
   assert.doesNotMatch(html, /Your guide/);
@@ -63,13 +64,20 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.doesNotMatch(html, /koala-colleague-sticker\.png/);
   assert.match(html, /koala-high-vis-ute-sticker\.png/);
   assert.match(html, /Not an official recruitment/);
-  assert.match(html, /Codex Pro, OpenAI API, Next\.js, Lucide icons/);
+  assert.match(
+    html,
+    /Codex Pro, OpenAI API, Next\.js, Lucide icons and curated Australian Government sources\./,
+  );
+  assert.doesNotMatch(html, /Sites hosting/);
   assert.doesNotMatch(html, /Skills that can travel/);
   assert.match(html, /No account required\./);
-  assert.match(html, /Ollie was inspired by the koala featured in/);
+  assert.match(
+    html,
+    /I did not obtain permission from ABS Comms or Media to use the Census campaign character/,
+  );
   assert.doesNotMatch(html, /I chose him because I would like to join a technology team/);
-  assert.match(html, /census-media-hub\/census-tools-and-resources\/video/);
-  assert.match(html, /the 2026 Census advertisements/);
+  assert.doesNotMatch(html, /Ollie was inspired by the koala featured in/);
+  assert.doesNotMatch(html, /census-media-hub\/census-tools-and-resources\/video/);
   assert.doesNotMatch(html, /certification-statement-2026-census-campaign/);
   assert.doesNotMatch(html, /One profile\. More than one possible path\./);
   assert.doesNotMatch(html, /Official structure in\. Cautious suggestions out\./);

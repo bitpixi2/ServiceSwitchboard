@@ -240,18 +240,14 @@ export default function ServiceSwitchboard() {
     <main>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="IM2026 Service Switchboard home">
-          <span className="brand-signal" aria-hidden="true">
-            <i />
-            <i />
-            <i />
+          <span className="brand-logo-frame" aria-hidden="true">
+            <img
+              className="brand-logo"
+              src="/service-switchboard-logo.png"
+              alt=""
+            />
           </span>
-          <span>
-            <strong>Service Switchboard</strong>
-            <small>IM2026 · working prototype</small>
-          </span>
-        </a>
-        <a className="quiet-link" href="#bot-card">
-          Go to Bot Card
+          <small>IM2026 · working prototype</small>
         </a>
       </header>
 
@@ -707,7 +703,7 @@ export default function ServiceSwitchboard() {
           </div>
           <div>
             <dt>Tools used</dt>
-            <dd>Codex Pro, OpenAI API, Next.js, Lucide icons, curated Australian Government sources and Sites hosting.</dd>
+            <dd>Codex Pro, OpenAI API, Next.js, Lucide icons and curated Australian Government sources.</dd>
           </div>
         </dl>
       </section>
@@ -757,15 +753,8 @@ export default function ServiceSwitchboard() {
             <a href="mailto:Kasey.Robinson@abs.gov.au">Kasey.Robinson@abs.gov.au</a>
           </div>
           <p className="footer-inspiration">
-            Ollie was inspired by the koala featured in{" "}
-            <a
-              href="https://www.abs.gov.au/census/census-media-hub/census-tools-and-resources/video"
-              target="_blank"
-              rel="noreferrer"
-            >
-              the 2026 Census advertisements
-            </a>
-            .
+            I did not obtain permission from ABS Comms or Media to use the Census
+            campaign character, so this prototype keeps the Service Switchboard title.
           </p>
         </div>
       </footer>
