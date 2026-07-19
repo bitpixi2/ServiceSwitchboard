@@ -1595,6 +1595,8 @@ footer span {
 @media (min-width: 901px) {
   .hero {
     max-width: 1320px;
+    min-height: auto;
+    padding-bottom: 24px;
   }
 
   .hero-copy {
@@ -1632,6 +1634,10 @@ footer span {
     justify-content: center;
   }
 
+  .mapper-section {
+    padding-top: 32px;
+  }
+
   .section-sticker,
   .results-illustration img {
     margin-left: auto;
@@ -1639,15 +1645,24 @@ footer span {
   }
 
   .submit-row {
+    border-bottom: 1px solid rgba(20, 43, 45, 0.18);
     flex-direction: column;
     gap: 12px;
     justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 30px;
     text-align: center;
+    width: min(820px, 100%);
   }
 
   .submit-row > p {
     max-width: 620px;
     text-align: center;
+  }
+
+  .submit-row > p span {
+    display: block;
   }
 
   .submit-button {
@@ -1662,11 +1677,13 @@ footer span {
   }
 
   .bot-card-graphic {
+    order: 2;
     width: 100%;
   }
 
   .share-card-graphic {
     display: block;
+    order: 1;
   }
 
   .footer-contact nav {

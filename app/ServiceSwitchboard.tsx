@@ -697,8 +697,8 @@ export default function ServiceSwitchboard() {
               )}
             </button>
             <p>
-              Generative AI interprets your words. Results are suggestions to investigate,
-              not employment advice.
+              <span>Generative AI interprets your words.</span>{" "}
+              <span>Results are suggestions to investigate, not employment advice.</span>
             </p>
           </div>
         </form>

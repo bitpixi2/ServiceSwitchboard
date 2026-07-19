@@ -74,6 +74,10 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.doesNotMatch(html, /Your switchboard to your next Australian Government job\./);
   assert.equal(html.match(/Build my job switch/g)?.length, 1);
   assert.match(html, /Calculate my results/);
+  assert.match(
+    html,
+    /<span>Generative AI interprets your words\.<\/span>[\s\S]*?<span>Results are suggestions to investigate, not employment advice\.<\/span>/,
+  );
   assert.doesNotMatch(html, /Build my map|Build my career map/);
   assert.doesNotMatch(html, /[↘↗→]/);
   assert.doesNotMatch(html, /Go to Bot Card/);
@@ -164,6 +168,14 @@ test("llms.txt contains the complete README and contact details", async () => {
 
   assert.equal(llms, readme);
   assert.match(llms, /## Contact/);
+  assert.match(llms, /\*\*Kasey Robinson\*\*/);
+  assert.match(
+    llms,
+    /\*\*Census Engagement Manager\*\* for \*Inclusive Strategies and Engagement\* in Central Victoria/,
+  );
+  assert.match(llms, /\[\*\*Australian Bureau of Statistics \(ABS\)\*\*\]\(https:\/\/www\.abs\.gov\.au\/\)/);
+  assert.match(llms, /US Citizen\. \*Full Australian working rights\.\*/);
+  assert.match(llms, /\*\*kasey\.robinson@abs\.gov\.au\*\*/);
   assert.match(llms, /kasey\.robinson@abs\.gov\.au/);
   assert.doesNotMatch(llms, /Kasey\.Robinson@abs\.gov\.au/);
   assert.match(llms, /## Contest entry submitted/);
@@ -232,6 +244,14 @@ test("loading experience explains the wait and names each result section", async
   );
   assert.match(
     styles,
+    /@media \(min-width: 901px\)[\s\S]*?\.hero\s*\{[^}]*min-height: auto;[^}]*padding-bottom: 24px;/,
+  );
+  assert.match(
+    styles,
+    /@media \(min-width: 901px\)[\s\S]*?\.mapper-section\s*\{[^}]*padding-top: 32px;/,
+  );
+  assert.match(
+    styles,
     /@media \(min-width: 901px\)[\s\S]*?\.hero-lede\s*\{[^}]*max-width: 920px;[^}]*white-space: nowrap;/,
   );
   assert.match(
@@ -240,7 +260,11 @@ test("loading experience explains the wait and names each result section", async
   );
   assert.match(
     styles,
-    /@media \(min-width: 901px\)[\s\S]*?\.submit-row\s*\{[^}]*flex-direction: column;[^}]*text-align: center;/,
+    /@media \(min-width: 901px\)[\s\S]*?\.submit-row\s*\{[^}]*border-bottom:[^;}]+;[^}]*flex-direction: column;[^}]*text-align: center;/,
+  );
+  assert.match(
+    styles,
+    /@media \(min-width: 901px\)[\s\S]*?\.submit-row > p span\s*\{[^}]*display: block;/,
   );
   assert.match(
     styles,
@@ -248,7 +272,11 @@ test("loading experience explains the wait and names each result section", async
   );
   assert.match(
     styles,
-    /@media \(min-width: 901px\)[\s\S]*?\.share-card-graphic\s*\{[^}]*display: block;/,
+    /@media \(min-width: 901px\)[\s\S]*?\.share-card-graphic\s*\{[^}]*display: block;[^}]*order: 1;/,
+  );
+  assert.match(
+    styles,
+    /@media \(min-width: 901px\)[\s\S]*?\.bot-card-graphic\s*\{[^}]*order: 2;/,
   );
   assert.match(
     styles,

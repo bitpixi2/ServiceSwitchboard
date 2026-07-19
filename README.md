@@ -146,6 +146,12 @@ The Service Switchboard entry email has been sent to [InnovationMonth@finance.go
 
 ## Contact
 
+**Kasey Robinson**<br>
+**Census Engagement Manager** for *Inclusive Strategies and Engagement* in Central Victoria<br>
+[**Australian Bureau of Statistics (ABS)**](https://www.abs.gov.au/)<br>
+US Citizen. *Full Australian working rights.*<br>
+**kasey.robinson@abs.gov.au**
+
 [Website](https://bitpixi.com) · [LinkedIn](https://linkedin.com/in/bitpixi) · [GitHub](https://github.com/bitpixi2/ServiceSwitchboard) · [Email](mailto:kasey.robinson@abs.gov.au)
 
 ---
