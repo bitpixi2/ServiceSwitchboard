@@ -239,6 +239,8 @@ test("loading experience explains the wait and names each result section", async
   assert.match(styles, /\.character-count\s*\{[^}]*font-style: normal;/s);
   assert.match(styles, /\.coffee-sticker\s*\{[^}]*height: 290px;[^}]*width: auto;/s);
   assert.match(styles, /\.coffee-sticker\s*\{[^}]*height: min\(220px, 64vw\);/s);
+  assert.match(styles, /\.ute-sticker\s*\{[^}]*width: 280px;/s);
+  assert.match(styles, /\.ute-sticker\s*\{[^}]*width: min\(210px, 62vw\);/s);
   assert.match(styles, /\.hero h1 > span\s*\{[^}]*white-space: nowrap;/s);
   assert.match(styles, /@keyframes submit-shimmer/);
   assert.match(

@@ -583,7 +583,7 @@ main {
 }
 
 .ute-sticker {
-  width: 310px;
+  width: 280px;
 }
 
 .details-grid {
@@ -1898,7 +1898,7 @@ footer span {
   }
 
   .ute-sticker {
-    width: min(230px, 68vw);
+    width: min(210px, 62vw);
   }
 
   .results-illustration img {
