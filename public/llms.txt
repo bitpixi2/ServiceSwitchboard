@@ -145,7 +145,7 @@ I would not release that capability without authentication, rate limits, logging
 > Census Engagement Manager for Inclusive Strategies and Engagement in Central Victoria<br>
 > [Australian Bureau of Statistics (ABS)](https://www.abs.gov.au/)<br>
 > US Citizen. Full Australian working rights.<br>
-> Kasey.Robinson@abs.gov.au
+> kasey.robinson@abs.gov.au
 
 ## Information sources
 
@@ -156,7 +156,7 @@ I would not release that capability without authentication, rate limits, logging
 
 ## Contact
 
-[Website](https://bitpixi.com) · [LinkedIn](https://linkedin.com/in/bitpixi) · [GitHub](https://github.com/bitpixi2/ServiceSwitchboard) · [Email](mailto:Kasey.Robinson@abs.gov.au)
+[Website](https://bitpixi.com) · [LinkedIn](https://linkedin.com/in/bitpixi) · [GitHub](https://github.com/bitpixi2/ServiceSwitchboard) · [Email](mailto:kasey.robinson@abs.gov.au)
 
 ---
 

@@ -1495,8 +1495,24 @@ footer span {
 
 .acknowledgement {
   border-top: 3px solid var(--coral);
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-style: italic;
+  line-height: 1.65;
   margin-top: 30px;
   padding-top: 28px;
+}
+
+.acknowledgement strong {
+  color: var(--teal);
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+.acknowledgement p {
+  font-size: inherit;
+  line-height: inherit;
+  margin-top: 6px;
 }
 
 .footer-contact nav {

@@ -880,7 +880,7 @@ export default function ServiceSwitchboard() {
               Australian Bureau of Statistics (ABS)
             </a>
             <span>US Citizen. Full Australian working rights.</span>
-            <a href="mailto:Kasey.Robinson@abs.gov.au">Kasey.Robinson@abs.gov.au</a>
+            <a href="mailto:kasey.robinson@abs.gov.au">kasey.robinson@abs.gov.au</a>
           </div>
         </div>
 

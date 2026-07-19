@@ -89,7 +89,8 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.match(html, /Australian Bureau of Statistics \(ABS\)/);
   assert.match(html, /href="https:\/\/www\.abs\.gov\.au\/"/);
   assert.match(html, /US Citizen\. Full Australian working rights\./);
-  assert.match(html, /Kasey\.Robinson@abs\.gov\.au/);
+  assert.match(html, /kasey\.robinson@abs\.gov\.au/);
+  assert.doesNotMatch(html, /Kasey\.Robinson@abs\.gov\.au/);
   assert.match(html, /koala-suitcase-sticker\.png/);
   assert.match(html, /koala-coffee-chat-sticker\.png/);
   assert.doesNotMatch(html, /koala-colleague-sticker\.png/);
@@ -125,7 +126,8 @@ test("llms.txt contains the complete README and contact details", async () => {
 
   assert.equal(llms, readme);
   assert.match(llms, /## Contact/);
-  assert.match(llms, /Kasey\.Robinson@abs\.gov\.au/);
+  assert.match(llms, /kasey\.robinson@abs\.gov\.au/);
+  assert.doesNotMatch(llms, /Kasey\.Robinson@abs\.gov\.au/);
   assert.match(llms, /github\.com\/bitpixi2\/ServiceSwitchboard/);
   assert.match(
     llms,
