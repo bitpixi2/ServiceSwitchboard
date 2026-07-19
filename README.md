@@ -138,9 +138,8 @@ I would not release that capability without authentication, rate limits, logging
 >
 > Kind regards,<br>
 > Kasey Robinson<br>
-> Inclusive Strategies Census Engagement Manager<br>
-> Australian Bureau of Statistics<br>
-> Bendigo, Australia<br>
+> Census Engagement Manager for Inclusive Strategies and Engagement in Central Victoria<br>
+> [Australian Bureau of Statistics (ABS)](https://www.abs.gov.au/)<br>
 > US Citizen. Full Australian working rights.<br>
 > Kasey.Robinson@abs.gov.au
 

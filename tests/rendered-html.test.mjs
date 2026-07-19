@@ -45,8 +45,12 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.match(html, /Acknowledgement of Country/);
   assert.match(html, /linkedin\.com\/in\/bitpixi/);
   assert.match(html, /github\.com\/bitpixi2/);
-  assert.match(html, /Inclusive Strategies Census Engagement Manager/);
-  assert.match(html, /Bendigo, Australia/);
+  assert.match(
+    html,
+    /Census Engagement Manager for Inclusive Strategies and Engagement in Central Victoria/,
+  );
+  assert.match(html, /Australian Bureau of Statistics \(ABS\)/);
+  assert.match(html, /href="https:\/\/www\.abs\.gov\.au\/"/);
   assert.match(html, /US Citizen\. Full Australian working rights\./);
   assert.match(html, /Kasey\.Robinson@abs\.gov\.au/);
   assert.match(html, /koala-suitcase-sticker\.png/);
@@ -58,6 +62,7 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.doesNotMatch(html, /Skills that can travel/);
   assert.match(html, /No account required\./);
   assert.match(html, /Ollie was inspired by the koala featured in/);
+  assert.doesNotMatch(html, /I chose him because I would like to join a technology team/);
   assert.match(html, /certification-statement-2026-census-campaign/);
   assert.doesNotMatch(html, /One profile\. More than one possible path\./);
   assert.doesNotMatch(html, /Official structure in\. Cautious suggestions out\./);

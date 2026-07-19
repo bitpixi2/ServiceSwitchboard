@@ -748,8 +748,13 @@ export default function ServiceSwitchboard() {
             </a>
           </nav>
           <div className="footer-contact-details">
-            <span>Inclusive Strategies Census Engagement Manager</span>
-            <span>Bendigo, Australia</span>
+            <span>
+              Census Engagement Manager for Inclusive Strategies and Engagement in
+              Central Victoria
+            </span>
+            <a href="https://www.abs.gov.au/" target="_blank" rel="noreferrer">
+              Australian Bureau of Statistics (ABS)
+            </a>
             <span>US Citizen. Full Australian working rights.</span>
             <a href="mailto:Kasey.Robinson@abs.gov.au">Kasey.Robinson@abs.gov.au</a>
           </div>
@@ -762,7 +767,7 @@ export default function ServiceSwitchboard() {
             >
               ABS Census advertising
             </a>
-            . I chose him because I would like to join a technology team.
+            .
           </p>
         </div>
       </footer>
