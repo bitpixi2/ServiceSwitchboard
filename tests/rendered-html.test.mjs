@@ -47,11 +47,14 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.doesNotMatch(html, /Go to Bot Card/);
   assert.match(html, /brand-signal/);
   assert.doesNotMatch(html, /service-switchboard-logo\.png/);
-  assert.match(html, /Bot card/);
+  assert.match(html, /service-switchboard-bot-card\.png/);
+  assert.match(html, /IM2026 Service Switchboard Bot Card\. Purpose:/);
+  assert.match(html, /No live vacancies\. No recruitment, visa, citizenship or clearance decisions\./);
+  assert.match(html, /switchboard\.bitpixi\.com by Kasey Robinson, ABS\./);
+  assert.doesNotMatch(html, /class="bot-card-grid"/);
   assert.match(html, /G’day! I’m your Service Switchboard bot\./);
   assert.doesNotMatch(html, /G’day! I’m Ollie/);
   assert.doesNotMatch(html, /Your guide/);
-  assert.match(html, /Ollie the Koala operating the Service Switchboard/);
   assert.match(html, /Acknowledgement of Country/);
   assert.ok(
     html.indexOf('class="footer-contact"') < html.indexOf('class="acknowledgement"'),

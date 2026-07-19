@@ -152,6 +152,9 @@ const loadingStages = [
   },
 ] as const;
 
+const botCardAlt =
+  "IM2026 Service Switchboard Bot Card. Purpose: Show where transferable skills may fit across Australian public services. Intended users: Current, non-ongoing and prospective public servants. Information used: User-entered skills and preferences, official job-family and public agency information. Limitations: No live vacancies. No recruitment, visa, citizenship or clearance decisions. Risks: AI may miss a path or use outdated information. Check official advice. Tools used: Codex Pro, OpenAI API, Next.js, Lucide icons and curated Australian Government sources. switchboard.bitpixi.com by Kasey Robinson, ABS.";
+
 function Chevron() {
   return <span aria-hidden="true">↘</span>;
 }
@@ -798,48 +801,16 @@ export default function ServiceSwitchboard() {
         </section>
       )}
 
-      <section className="bot-card-section" id="bot-card">
-        <div className="bot-card-intro">
-          <span className="bot-card-mascot">
-            <img
-              src="/koala-switchboard-sticker.png"
-              alt="Ollie the Koala operating the Service Switchboard"
-            />
-          </span>
-          <div className="bot-card-title">
-            <span>IM2026</span>
-            <div>
-              <p>Bot card</p>
-              <h2>Service Switchboard</h2>
-            </div>
-          </div>
-        </div>
-        <dl className="bot-card-grid">
-          <div>
-            <dt>Purpose</dt>
-            <dd>Help people discover transferable career paths across Australian public services.</dd>
-          </div>
-          <div>
-            <dt>Intended users</dt>
-            <dd>Current, non-ongoing and prospective public servants exploring their next move.</dd>
-          </div>
-          <div>
-            <dt>Information used</dt>
-            <dd>User-entered skills and preferences, an official job-family taxonomy and public agency information.</dd>
-          </div>
-          <div>
-            <dt>Limitations</dt>
-            <dd>It does not list every employer, verify vacancies or make recruitment, visa or clearance decisions.</dd>
-          </div>
-          <div>
-            <dt>Risks</dt>
-            <dd>AI may overgeneralise experience or miss a suitable path. Every result needs human checking.</dd>
-          </div>
-          <div>
-            <dt>Tools used</dt>
-            <dd>Codex Pro, OpenAI API, Next.js, Lucide icons and curated Australian Government sources.</dd>
-          </div>
-        </dl>
+      <section
+        className="bot-card-section"
+        id="bot-card"
+        aria-label="Service Switchboard bot card"
+      >
+        <img
+          className="bot-card-graphic"
+          src="/service-switchboard-bot-card.png"
+          alt={botCardAlt}
+        />
       </section>
 
       <footer>
