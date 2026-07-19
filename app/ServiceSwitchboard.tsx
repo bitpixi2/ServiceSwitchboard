@@ -346,7 +346,7 @@ export default function ServiceSwitchboard() {
 
           <fieldset className="form-block story-block">
             <legend>
-              <span>2</span> What have you done—and what do you want more of?
+              <span>2</span> Your background and desired next role?
             </legend>
             <div className="form-illustration-layout story-layout">
               <div>

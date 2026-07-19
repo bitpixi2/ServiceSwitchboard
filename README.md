@@ -65,7 +65,6 @@ The response is returned as structured data so the interface can present a consi
 
 <p align="center">
   <img src="public/koala-suitcase-sticker.png" alt="Ollie the Koala carrying a suitcase" width="250">
-  <img src="public/koala-coffee-chat-sticker.png" alt="Two koala colleagues talking over coffee" width="300">
 </p>
 
 ## What the bot can help with
@@ -76,6 +75,10 @@ The response is returned as structured data so the interface can present a consi
 - Identify Commonwealth organisations worth investigating.
 - Separate options into **Explore now**, **Confirm first** and **Build toward**.
 - Prepare sensible questions for a recruiter or hiring contact.
+
+<p align="center">
+  <img src="public/koala-coffee-chat-sticker.png" alt="Two koala colleagues talking over coffee" width="300">
+</p>
 
 ## Safety by design
 

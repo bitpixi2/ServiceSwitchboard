@@ -31,6 +31,8 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.match(html, /<title>IM2026 Service Switchboard<\/title>/i);
   assert.match(html, /See where you could serve Australia next\./);
   assert.match(html, /What work interests you\?/);
+  assert.match(html, /Your background and desired next role\?/);
+  assert.doesNotMatch(html, /What have you done—and what do you want more of\?/);
   assert.match(html, /Trades, facilities and logistics/);
   assert.doesNotMatch(html, /Show all 20 career areas|Show fewer areas/);
   assert.match(html, /Your switchboard to your next Australian Government job\./);
