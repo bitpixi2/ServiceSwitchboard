@@ -380,17 +380,18 @@ main {
   padding: 34px;
 }
 
-.form-block legend {
+.form-step-heading {
   align-items: center;
   display: flex;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 25px;
   font-weight: 500;
   gap: 14px;
-  padding: 0 10px 0 0;
+  line-height: 1.15;
+  margin: 0 0 28px;
 }
 
-.form-block legend > span {
+.form-step-heading > span {
   align-items: center;
   background: var(--ink);
   border-radius: 50%;
@@ -409,7 +410,7 @@ main {
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: 12px;
+  margin-top: 0;
 }
 
 .category-card {
@@ -545,7 +546,7 @@ main {
   display: grid;
   gap: 28px;
   grid-template-columns: minmax(0, 1fr) 220px;
-  margin-top: 12px;
+  margin-top: 0;
 }
 
 .form-sticker {
@@ -1555,7 +1556,7 @@ footer span {
   .hero {
     gap: 24px;
     min-height: auto;
-    padding: 0 16px 54px;
+    padding: 0 16px 32px;
   }
 
   .hero::before {
@@ -1647,6 +1648,7 @@ footer span {
 
   .mapper-intro {
     justify-content: center;
+    margin-top: -12px;
   }
 
   .section-sticker {
@@ -1671,7 +1673,7 @@ footer span {
 
   .mapper-section {
     padding-bottom: 76px;
-    padding-top: 32px;
+    padding-top: 0;
   }
 
   .results-section,
@@ -1695,11 +1697,11 @@ footer span {
     padding: 22px 16px;
   }
 
-  .form-block legend {
+  .form-step-heading {
     align-items: flex-start;
     font-size: 21px;
     line-height: 1.15;
-    max-width: calc(100vw - 64px);
+    margin-bottom: 22px;
   }
 
   .category-grid,
@@ -1845,7 +1847,7 @@ footer span {
 /* Keep supporting text readable on small screens and at normal browser zoom. */
 .brand small,
 .kicker,
-.form-block legend > span,
+.form-step-heading > span,
 .category-mark,
 .map-source-node small,
 .agency-nodes small,

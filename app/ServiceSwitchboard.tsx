@@ -75,11 +75,11 @@ type FormState = {
 };
 
 const initialForm: FormState = {
-  interests: ["technology", "design", "data"],
+  interests: [],
   story: "",
-  location: "Victoria",
+  location: "Australia-wide",
   workSetting: "any",
-  employmentStatus: "non_ongoing_aps",
+  employmentStatus: "not_sure",
   citizenshipStatus: "prefer_not_to_say",
 };
 
@@ -440,11 +440,14 @@ export default function ServiceSwitchboard() {
         </div>
 
         <form onSubmit={submit} className="mapper-form">
-          <fieldset className="form-block categories-block">
-            <legend>
+          <section
+            className="form-block categories-block"
+            aria-labelledby="work-interests-heading"
+          >
+            <h2 className="form-step-heading" id="work-interests-heading">
               <span>1</span> What work interests you?
-            </legend>
-            <div className="category-grid">
+            </h2>
+            <div className="category-grid" role="group" aria-labelledby="work-interests-heading">
               {careerCategories.map((category) => {
                 const selected = form.interests.includes(category.id);
                 const CategoryIcon = categoryIcons[category.id] ?? BriefcaseBusiness;
@@ -471,12 +474,15 @@ export default function ServiceSwitchboard() {
             <p className="selection-count" aria-live="polite">
               {form.interests.length} selected · maximum 8
             </p>
-          </fieldset>
+          </section>
 
-          <fieldset className="form-block story-block">
-            <legend>
+          <section
+            className="form-block story-block"
+            aria-labelledby="background-heading"
+          >
+            <h2 className="form-step-heading" id="background-heading">
               <span>2</span> Your background and desired next role?
-            </legend>
+            </h2>
             <div className="form-illustration-layout story-layout">
               <div>
                 <label htmlFor="your-story">
@@ -502,12 +508,15 @@ export default function ServiceSwitchboard() {
                 alt="Two koala colleagues discussing career options over coffee"
               />
             </div>
-          </fieldset>
+          </section>
 
-          <fieldset className="form-block details-block">
-            <legend>
+          <section
+            className="form-block details-block"
+            aria-labelledby="practical-details-heading"
+          >
+            <h2 className="form-step-heading" id="practical-details-heading">
               <span>3</span> Add practical details
-            </legend>
+            </h2>
             <div className="form-illustration-layout details-layout">
               <div>
                 <div className="details-grid">
@@ -596,7 +605,7 @@ export default function ServiceSwitchboard() {
                 alt="Ollie the Koala with his paws in his high-vis vest pockets beside a utility ute"
               />
             </div>
-          </fieldset>
+          </section>
 
           {error && (
             <div className="form-error" role="alert">

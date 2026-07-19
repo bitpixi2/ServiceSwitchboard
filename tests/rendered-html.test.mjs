@@ -37,6 +37,14 @@ test("server-renders the Service Switchboard MVP", async () => {
   );
   assert.doesNotMatch(html, /See where you could serve Australia next\./);
   assert.match(html, /What work interests you\?/);
+  assert.match(html, /class="form-step-heading" id="work-interests-heading"/);
+  assert.match(html, /class="form-step-heading" id="background-heading"/);
+  assert.match(html, /class="form-step-heading" id="practical-details-heading"/);
+  assert.doesNotMatch(html, /<legend/);
+  assert.doesNotMatch(html, /aria-pressed="true"/);
+  assert.match(html, /0(?:<!-- -->)? selected · maximum 8/);
+  assert.match(html, /<option selected="">Australia-wide<\/option>/);
+  assert.match(html, /<option value="not_sure" selected="">Not sure<\/option>/);
   assert.match(html, /Your background and desired next role\?/);
   assert.doesNotMatch(html, /What have you done—and what do you want more of\?/);
   assert.match(html, /Trades, facilities and logistics/);
@@ -132,6 +140,7 @@ test("loading experience explains the wait and names each result section", async
   assert.match(source, /ArrowDownRight/);
   assert.match(source, /ExternalLink/);
   assert.doesNotMatch(source, /[↘↗→]/);
+  assert.match(source, /interests: \["technology", "design", "data", "cyber", "field"\]/);
 });
 
 test("AI endpoint fails safely when the server key is absent", async () => {
