@@ -213,6 +213,8 @@ test("loading experience explains the wait and names each result section", async
   ]);
 
   assert.match(source, /Results on the way!/);
+  assert.match(source, /We could not flip the switches yet\./);
+  assert.doesNotMatch(source, /We could not build the map yet\./);
   assert.match(source, /This process takes ~1 minute/);
   assert.match(source, /please keep this tab open while the\s+bot generates your results/);
   assert.doesNotMatch(source, /Your results are on the way\./);

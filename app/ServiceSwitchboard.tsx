@@ -681,7 +681,7 @@ export default function ServiceSwitchboard() {
 
           {error && (
             <div className="form-error" role="alert">
-              <strong>We could not build the map yet.</strong>
+              <strong>We could not flip the switches yet.</strong>
               <span>{error}</span>
             </div>
           )}
