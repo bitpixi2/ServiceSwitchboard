@@ -51,6 +51,9 @@ test("server-renders the Service Switchboard MVP", async () => {
   assert.match(html, /<option selected="">Australia-wide<\/option>/);
   assert.match(html, /<option value="not_sure" selected="">Not sure<\/option>/);
   assert.match(html, /Your background and desired next role\?/);
+  assert.match(html, /This site does not store your data/);
+  assert.match(html, /sent briefly to an AI\s+service in the cloud to create your results/);
+  assert.match(html, /protected, classified or very personal information/);
   assert.doesNotMatch(html, /What have you done—and what do you want more of\?/);
   assert.match(html, /Trades, facilities and logistics/);
   assert.doesNotMatch(html, /Show all 20 career areas|Show fewer areas/);
@@ -153,6 +156,20 @@ test("loading experience explains the wait and names each result section", async
   assert.match(source, /interests: \["technology", "design", "data", "cyber", "field"\]/);
   assert.match(styles, /\.hero-actions\s*\{[^}]*border-bottom: 1px solid var\(--line\)/s);
   assert.doesNotMatch(styles, /\.preview-guide\s*\{[^}]*border-top:/s);
+});
+
+test("generated results can be saved as a local PDF", async () => {
+  const [source, styles] = await Promise.all([
+    readFile(new URL("../app/ServiceSwitchboard.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(source, /FileDown/);
+  assert.match(source, /Save results as PDF/);
+  assert.match(source, /window\.print\(\)/);
+  assert.match(styles, /@media print/);
+  assert.match(styles, /main > :not\(\.results-section\)/);
+  assert.match(styles, /\.save-pdf-button/);
 });
 
 test("AI endpoint fails safely when the server key is absent", async () => {

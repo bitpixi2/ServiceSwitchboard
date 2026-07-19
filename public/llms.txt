@@ -83,7 +83,7 @@ The response is returned as structured data so the interface can present a consi
 ## Safety by design
 
 - All generative AI requests run on the server; no service credentials are sent to the browser or committed to this public repository.
-- The service asks people not to enter classified, sensitive or personal information.
+- The site does not store a person's answers. It sends them briefly to the cloud AI service to create the results, so people are asked not to enter protected, classified or very personal information.
 - Official frameworks and a curated organisation catalogue ground the response.
 - The bot does not claim a vacancy exists or make recruitment, citizenship, visa or security-clearance decisions.
 - Every result tells the user what must be checked with the agency or vacancy contact.

@@ -10,6 +10,7 @@ import {
   Cpu,
   Database,
   ExternalLink,
+  FileDown,
   FlaskConical,
   FolderSearch,
   Gavel,
@@ -319,6 +320,11 @@ export default function ServiceSwitchboard() {
     setCopied(true);
   }
 
+  function saveResultsAsPdf() {
+    if (!map) return;
+    window.print();
+  }
+
   return (
     <main>
       {loading && (
@@ -498,7 +504,11 @@ export default function ServiceSwitchboard() {
                   />
                 </label>
                 <div className="story-foot">
-                  <span>Do not enter protected, classified or personal information.</span>
+                  <span>
+                    This site does not store your data, but it is sent briefly to an AI
+                    service in the cloud to create your results. Please do not enter
+                    protected, classified or very personal information.
+                  </span>
                   <span>{form.story.length}/1600</span>
                 </div>
               </div>
@@ -641,9 +651,20 @@ export default function ServiceSwitchboard() {
               <p className="kicker">Your service switchboard</p>
               <h2 id="results-title">More than one path fits.</h2>
             </div>
-            <span className="generated-time">
-              AI-generated · {generatedAt ? new Date(generatedAt).toLocaleDateString("en-AU") : "today"}
-            </span>
+            <div className="results-tools">
+              <span className="generated-time">
+                AI-generated · {generatedAt ? new Date(generatedAt).toLocaleDateString("en-AU") : "today"}
+              </span>
+              <button
+                className="save-pdf-button"
+                type="button"
+                onClick={saveResultsAsPdf}
+                title="Opens your device's print or PDF options"
+              >
+                <FileDown aria-hidden="true" strokeWidth={2.2} />
+                Save results as PDF
+              </button>
+            </div>
           </div>
 
           <div className="summary-card">
